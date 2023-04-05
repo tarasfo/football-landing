@@ -1,0 +1,8 @@
+.wrapper {
+  width: 3210px;
+  left: 0px;
+  display: block;
+  transform: translate3d(0px, 0px, 0px);
+  transition: all 1000ms ease 0s;
+  position: relative;
+}
