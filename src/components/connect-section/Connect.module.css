@@ -1,0 +1,66 @@
+.submitButton {
+  height: 45px;
+  border: 0;
+  border-radius: 0 5px 5px 0;
+  margin-left: -35px;
+  padding: 0 25px 0 25px;
+  background: #21bf73;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #ffffff;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 5px 30px rgba(255, 255, 255, 0.05);
+  -webkit-transition: 500ms;
+  -moz-transition: 500ms;
+  transition: 500ms;
+}
+
+.container {
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.innerContainer {
+  width: 40%;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.startTrial {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 1px;
+  color: #21bf73;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.connectTitle {
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1.4;
+  color: #383B61;
+}
+
+.emailInput {
+  color: #222222;
+  font-size: 14px;
+  font-weight: 500;
+  height: 45px;
+  border: 0;
+  border-radius: 5px 0 0 5px;
+  background-color: #F0F5F8;
+  outline: none;
+  padding: 0 75px 0 20px;
+  box-shadow: 0 5px 30px rgba(255, 255, 255, 0.1);
+}

@@ -17,23 +17,22 @@ import styles from "./Header.module.css";
 import React from "react";
 import { useRouter } from "next/router";
 import { getLocale } from "next-g11n";
-const navItems = ["Product", "Features", "Reviews", "Pricing", "FAQ"];
 
 function Header({ header, download }: { header: any; download: any }) {
   const router = useRouter();
   const g11nLocale = getLocale(router) || "en";
 
   return (
-    <AppBar
-      component="nav"
-      position="fixed"
-      style={{ backgroundColor: "white", boxShadow: "none" }}
-    >
-      <Toolbar style={{ justifyContent: "space-around" }}>
-        <Typography style={{ color: "black" }}>Connect.</Typography>
-        <Box style={{ display: "flex", gap: "5px" }}>
+    <AppBar component="nav" position="fixed" className={styles.appBar}>
+      <Toolbar className={styles.toolbar}>
+        <Typography className={styles.title}>Connect.</Typography>
+        <Box className={styles.buttons}>
           {header.map((item: any) => (
-            <Button style={{ textTransform: "none" }} key={item[g11nLocale]}>
+            <Button
+              onClick={() => router.push(`#${item["en"]}`)} // take id of section from dictionary
+              className={styles.button}
+              key={item[g11nLocale]}
+            >
               {item[g11nLocale]}
             </Button>
           ))}

@@ -2,156 +2,47 @@ import { Box } from "@mui/material";
 import React from "react";
 import Image from "next/image";
 import styles from "./Reviews.module.css";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from "react-responsive-carousel";
 
 function ReviewsSection() {
   return (
-    <Box
-      style={{
-        width: "100%",
-        marginTop: "50px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        flexDirection: "column",
-      }}
-    >
-      <div>
-        <div style={{ textAlign: "center" }}>
-          <h4>OUR RESULTS</h4>
-          <h2>Our awesome results worth displaying</h2>
-        </div>
-
-        <Box style={{ display: "flex", alignItems: "center", gap: "80px" }}>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
-            <Image src="/f1.png" alt="Icon" width={100} height={100} />
-
-            <h3
-              style={{
-                fontSize: "28px",
-                fontWeight: 700,
-                color: "#383B61",
-                margin: "0",
-              }}
-            >
-              <span>47</span>%
-            </h3>
-
-            <h2
-              style={{
-                margin: "0",
-                fontSize: "15px",
-                fontWeight: 500,
-                padding: "0.5em",
-                color: "#ABAFB3",
-              }}
-            >
-              Mobile Users
-            </h2>
-          </div>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
-            <Image src="/f2.png" alt="Icon" width={100} height={100} />
-
-            <h3
-              style={{
-                fontSize: "28px",
-                fontWeight: 700,
-                color: "#383B61",
-                margin: "0",
-              }}
-            >
-              <span>33</span>%
-            </h3>
-
-            <h2
-              style={{
-                fontSize: "15px",
-                fontWeight: 500,
-                padding: "0.5em",
-                color: "#ABAFB3",
-                margin: "0",
-              }}
-            >
-              Daily Views
-            </h2>
-          </div>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
-            <Image src="/f3.png" alt="Icon" width={100} height={100} />
-
-            <h3
-              style={{
-                fontSize: "28px",
-                fontWeight: 700,
-                color: "#383B61",
-                margin: "0",
-              }}
-            >
-              <span>28</span>%
-            </h3>
-
-            <h2
-              style={{
-                fontSize: "15px",
-                fontWeight: 500,
-                padding: "0.5em",
-                color: "#ABAFB3",
-                margin: "0",
-              }}
-            >
-              Monthly Returns
-            </h2>
-          </div>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
-            <Image src="/f4.png" alt="Icon" width={100} height={100} />
-
-            <h3
-              style={{
-                fontSize: "28px",
-                fontWeight: 700,
-                color: "#383B61",
-                margin: "0",
-              }}
-            >
-              <span>349</span>%
-            </h3>
-
-            <h2
-              style={{
-                fontSize: "15px",
-                fontWeight: 500,
-                padding: "0.5em",
-                color: "#ABAFB3",
-                margin: "0",
-              }}
-            >
-              Annual Growth
-            </h2>
-          </div>
-        </Box>
+    <Box id="Reviews" className={styles.container}>
+      <div >
+        <h4 className={styles.subTitle}>OUR RESULTS</h4>
+        <h2 className={styles.title}>Our awesome results worth displaying</h2>
       </div>
+
+      <Box className={styles.flexContainer}>
+        <div className={styles.flexColumnCenter}>
+          <Image src="/f1.png" alt="Icon" width={100} height={100} />
+          <h3 className={styles.resultPercentage}>
+            <span>47</span>%
+          </h3>
+          <h2 className={styles.resultDescription}>Mobile Users</h2>
+        </div>
+        <div className={styles.flexColumnCenter}>
+          <Image src="/f2.png" alt="Icon" width={100} height={100} />
+          <h3 className={styles.resultPercentage}>
+            <span>33</span>%
+          </h3>
+          <h2 className={styles.resultDescription}>Daily Views</h2>
+        </div>
+        <div className={styles.flexColumnCenter}>
+          <Image src="/f3.png" alt="Icon" width={100} height={100} />
+          <h3 className={styles.resultPercentage}>
+            <span>28</span>%
+          </h3>
+          <h2 className={styles.resultDescription}>Monthly Returns</h2>
+        </div>
+        <div className={styles.flexColumnCenter}>
+          <Image src="/f4.png" alt="Icon" width={100} height={100} />
+          <h3 className={styles.resultPercentage}>
+            <span>349</span>%
+          </h3>
+          <h2 className={styles.resultDescription}>Annual Growth</h2>
+        </div>
+      </Box>
 
       <div
         id="reviews"
@@ -163,110 +54,303 @@ function ReviewsSection() {
           alignItems: "center",
           width: "60%",
           justifyContent: "center",
+          padding: "100px 50px 100px 50px",
+          gap: "50px",
         }}
       >
-        <div style={{ textAlign: "left" }}>
-          <h2>Stories from our customers</h2>
-          <p>
+        <div
+          style={{
+            textAlign: "left",
+            display: "flex",
+            alignItems: "flex-start",
+            flexDirection: "column",
+            padding: "50px",
+          }}
+        >
+          <h2
+            style={{
+              fontSize: "34px",
+              fontWeight: 800,
+              color: "#383B61",
+              lineHeight: 1.2,
+              margin: "0",
+              padding: "0",
+              flex: "1 1 0%",
+            }}
+          >
+            Stories from our customers
+          </h2>
+          <p
+            style={{
+              margin: "0",
+              padding: "0",
+              fontSize: "16px",
+              fontWeight: 400,
+              lineHeight: 1.6,
+              letterSpacing: "0.01em",
+              color: "#6A7076",
+              marginTop: "15px",
+            }}
+          >
             When you get staright to the point the presentation looks
             attractive.
           </p>
         </div>
-        <div
-          style={{
-            overflow: "hidden",
-            position: "relative",
-            width: "100%",
-            maxHeight: "400px",
-          }}
-        >
-          <div className={styles.wrapper}>
-            <div style={{ width: "535px" }}>
-              <Image src="quote.svg" alt="Quote" width={100} height={100} />
-              <h2>
-                Pariatur cliche reprehenderit, enim eiusmod high life accusamus
-                terry richardson ad squid. We use Connect for key for easy and
-                seamless weekly communication with our clients and .
-              </h2>
-              <div>
-                <div>
-                  <div>
-                    <Image
-                      src="/rev.png"
-                      alt="Feature"
-                      width={100}
-                      height={100}
-                    />
-                  </div>
-                </div>
-                <div>
-                  <h3>Marty McFly</h3>
-                  <p>
-                    Head of OP, <a href="#">Future LLC</a>
-                  </p>
-                </div>
+        <Box style={{ maxWidth: "535px" }}>
+          <Carousel
+            autoPlay={true}
+            infiniteLoop={true}
+            showStatus={false}
+            showThumbs={false}
+            showArrows={false}
+            showIndicators={false}
+            swipeable={true}
+            emulateTouch={true}
+          >
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "20px",
+                maxWidth: "535px",
+              }}
+            >
+              <div style={{ display: "flex", textAlign: "left", gap: "5px" }}>
+                <Image
+                  style={{
+                    display: "inline",
+                    padding: "0",
+                    maxWidth: "32px",
+                  }}
+                  src="quote.svg"
+                  alt="Quote"
+                  width={32}
+                  height={32}
+                />
+                <span
+                  style={{
+                    textAlign: "justify",
+                    fontSize: "18px",
+                    color: "#6A7076",
+                    fontWeight: 500,
+                    lineHeight: "1.6",
+                  }}
+                >
+                  Pariatur cliche reprehenderit, enim eiusmod high life
+                  accusamus terry richardson ad squid. We use Connect for key
+                  for easy and seamless weekly communication with our clients
+                  and .
+                </span>
               </div>
-            </div>
-          </div>
 
-          <div>
-            <div>
-              <Image src="/quote.svg" width={100} height={100} alt="Quote" />
-              <h2>
-                {" "}
-                Pariatur cliche reprehenderit, enim eiusmod high life accusamus
-                terry richardson ad squid. We use Connect for key for easy and
-                seamless weekly communication with our clients.
-              </h2>
-              <div>
-                <div>
-                  <div>
-                    <Image
-                      src="/rev2.png"
-                      alt="Feature"
-                      width={100}
-                      height={100}
-                    />
-                  </div>
-                </div>
-                <div>
-                  <h3>Dr. Strange</h3>
-                  <p>
-                    CTO, <a href="#">Arma Systems</a>
+              <div
+                style={{ display: "flex", alignItems: "center", gap: "20px" }}
+              >
+                <Image
+                  src="/rev.png"
+                  alt="Feature"
+                  width={60}
+                  height={60}
+                  style={{ maxWidth: "60px", borderRadius: "50%" }}
+                />
+
+                <div style={{ textAlign: "left" }}>
+                  <h3
+                    style={{
+                      margin: "0",
+                      padding: "0",
+                      color: "#161851",
+                      fontWeight: 600,
+                      lineHeight: 1.2,
+                      marginBottom: "5px",
+                    }}
+                  >
+                    Marty McFly
+                  </h3>
+                  <p
+                    style={{
+                      margin: "0",
+                      padding: "0",
+                      fontSize: "15px",
+                      fontWeight: 500,
+                      lineHeight: 1.6,
+                      color: "#5e687c",
+                    }}
+                  >
+                    Head of OP,
+                    <a
+                      style={{ color: "#3498db", textDecoration: "none" }}
+                      href="#"
+                    >
+                      Future LLC
+                    </a>
                   </p>
                 </div>
               </div>
             </div>
-          </div>
-          <div>
-            <div>
-              <Image src="/quote.svg" alt="Quote" width={100} height={100} />
-              <h2>
-                We use Connect for key for easy and seamless weekly
-                communication with our clients. Pariatur cliche reprehenderit,
-                enim eiusmod high life accusamus terry richardson ad squid.
-              </h2>
-              <div>
-                <div>
-                  <div>
-                    <Image
-                      src="/rev3.png"
-                      alt="Feature"
-                      width={100}
-                      height={100}
-                    />
-                  </div>
-                </div>
-                <div>
-                  <h3>John Kennedy</h3>
-                  <p>
-                    Manager Sales, <a href="#">Optima Corp</a>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "20px",
+                maxWidth: "535px",
+              }}
+            >
+              <div style={{ display: "flex", textAlign: "left", gap: "5px" }}>
+                <Image
+                  style={{
+                    display: "inline",
+                    padding: "0",
+                    maxWidth: "32px",
+                  }}
+                  src="quote.svg"
+                  alt="Quote"
+                  width={32}
+                  height={32}
+                />
+                <span
+                  style={{
+                    textAlign: "justify",
+                    fontSize: "18px",
+                    color: "#6A7076",
+                    fontWeight: 500,
+                    lineHeight: "1.6",
+                  }}
+                >
+                  Pariatur cliche reprehenderit, enim eiusmod high life
+                  accusamus terry richardson ad squid. We use Connect for key
+                  for easy and seamless weekly communication with our clients
+                  and .
+                </span>
+              </div>
+
+              <div
+                style={{ display: "flex", alignItems: "center", gap: "20px" }}
+              >
+                <Image
+                  src="/rev2.png"
+                  alt="Feature"
+                  width={60}
+                  height={60}
+                  style={{ maxWidth: "60px", borderRadius: "50%" }}
+                />
+
+                <div style={{ textAlign: "left" }}>
+                  <h3
+                    style={{
+                      margin: "0",
+                      padding: "0",
+                      color: "#161851",
+                      fontWeight: 600,
+                      lineHeight: 1.2,
+                      marginBottom: "5px",
+                    }}
+                  >
+                    Dr. Strange
+                  </h3>
+                  <p
+                    style={{
+                      margin: "0",
+                      padding: "0",
+                      fontSize: "15px",
+                      fontWeight: 500,
+                      lineHeight: 1.6,
+                      color: "#5e687c",
+                    }}
+                  >
+                    CTO,{" "}
+                    <a
+                      style={{ color: "#3498db", textDecoration: "none" }}
+                      href="#"
+                    >
+                      Arma Systems
+                    </a>
                   </p>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "20px",
+                maxWidth: "535px",
+              }}
+            >
+              <div style={{ display: "flex", textAlign: "left", gap: "5px" }}>
+                <Image
+                  style={{
+                    display: "inline",
+                    padding: "0",
+                    maxWidth: "32px",
+                  }}
+                  src="quote.svg"
+                  alt="Quote"
+                  width={32}
+                  height={32}
+                />
+                <span
+                  style={{
+                    textAlign: "justify",
+                    fontSize: "18px",
+                    color: "#6A7076",
+                    fontWeight: 500,
+                    lineHeight: "1.6",
+                  }}
+                >
+                  We use Connect for key for easy and seamless weekly
+                  communication with our clients. Pariatur cliche reprehenderit,
+                  enim eiusmod high life accusamus terry richardson ad squid.
+                </span>
+              </div>
+
+              <div
+                style={{ display: "flex", alignItems: "center", gap: "20px" }}
+              >
+                <Image
+                  src="/rev3.png"
+                  alt="Feature"
+                  width={60}
+                  height={60}
+                  style={{ maxWidth: "60px", borderRadius: "50%" }}
+                />
+
+                <div style={{ textAlign: "left" }}>
+                  <h3
+                    style={{
+                      margin: "0",
+                      padding: "0",
+                      color: "#161851",
+                      fontWeight: 600,
+                      lineHeight: 1.2,
+                      marginBottom: "5px",
+                    }}
+                  >
+                    John Kennedy
+                  </h3>
+                  <p
+                    style={{
+                      margin: "0",
+                      padding: "0",
+                      fontSize: "15px",
+                      fontWeight: 500,
+                      lineHeight: 1.6,
+                      color: "#5e687c",
+                    }}
+                  >
+                    CTO,{" "}
+                    <a
+                      style={{ color: "#3498db", textDecoration: "none" }}
+                      href="#"
+                    >
+                      Optima Corp
+                    </a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </Carousel>
+        </Box>
       </div>
     </Box>
   );

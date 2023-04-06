@@ -33,3 +33,41 @@
   margin-top: 15px;
   margin-bottom: 15px;
 }
+
+.productSection {
+  height: 500px;
+  width: 100%;
+  background-color: #f0f5f9;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  align-items: center;
+  padding: 0 20% 0 20%;
+}
+
+.productContent {
+  text-align: left;
+}
+
+.productText {
+  margin-right: 10px;
+}
+
+.productTitle {
+  font-size: 36px;
+  font-weight: 800;
+  color: #3a3a47;
+  line-height: 1.2;
+  margin-top: 20px;
+}
+
+.productLink {
+  margin-right: 10px;
+  background-color: transparent;
+  color: #3498db;
+  border: 2px solid #3498db;
+  border-radius: 5px;
+  padding: 10px 20px 10px 20px;
+  text-transform: none;
+  text-decoration: none;
+}

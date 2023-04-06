@@ -6,26 +6,9 @@ import styles from "./About.module.css";
 
 function AboutSection() {
   return (
-    <Box
-      style={{
-        height: "auto",
-        width: "100%",
-        display: "flex",
-        flexDirection: "column",
-        gap: "150px",
-        padding: "0 20%",
-        marginTop: "50px",
-      }}
-    >
+    <Box className={styles.box}>
       <div className={styles.aboutTextContainer}>
-        <div
-          style={{
-            flex: 0.4,
-            textAlign: "left",
-            height: "100px",
-            width: "100%",
-          }}
-        >
+        <div className={styles.textContainer}>
           <h4 className={styles.aboutTitle}>{"What's inside"}</h4>
           <h2 className={styles.aboutSubtitle}>
             Connect can bring charm to your website.
@@ -36,8 +19,8 @@ function AboutSection() {
           </p>
         </div>
       </div>
-      <div style={{ display: "flex", gap: "30px" }}>
-        <div style={{ backgroundColor: "#fff2e5", padding: "50px" }}>
+      <div className={styles.cardWrapper}>
+        <div className={styles.card1}>
           <Image src="/cat1.png" width="100" alt="Feature" height={100} />
           <div>
             <h3 className={styles.cardTitle}>Fluid Layout</h3>
@@ -47,7 +30,7 @@ function AboutSection() {
             </p>
           </div>
         </div>
-        <div style={{ backgroundColor: "#F8F9FA", padding: "50px" }}>
+        <div className={styles.card2}>
           <Image src="/cat2.png" width="100" alt="Feature" height={100} />
           <div>
             <h3 className={styles.cardTitle}>Fluid Layout</h3>
@@ -57,7 +40,7 @@ function AboutSection() {
             </p>
           </div>
         </div>
-        <div style={{ backgroundColor: "#F0F5F9", padding: "50px" }}>
+        <div className={styles.card3}>
           <Image src="/cat3.png" width="100" alt="Feature" height={100} />
           <div>
             <h3 className={styles.cardTitle}>Fluid Layout</h3>

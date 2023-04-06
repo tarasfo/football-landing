@@ -12,6 +12,9 @@ import ProductSection from "@/components/product-section";
 import AboutSection from "@/components/about-section";
 import FeaturesSection from "@/components/features-section";
 import ReviewsSection from "@/components/reviews-section";
+import PricingSection from "@/components/pricing-section";
+import FAQSection from "@/components/faq-section";
+import ConnectSection from "@/components/connect-section";
 
 export default function Home({
   header,
@@ -31,6 +34,9 @@ export default function Home({
         <AboutSection />
         <FeaturesSection />
         <ReviewsSection />
+        <PricingSection />
+        <FAQSection />
+        <ConnectSection />
         <Footer />
       </main>
     </>

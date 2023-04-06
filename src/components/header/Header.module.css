@@ -14,3 +14,26 @@
   color: white;
   transition: 0.2s;
 }
+
+.appBar {
+  background-color: white !important;
+  box-shadow: none !important;
+}
+
+.toolbar {
+  justify-content: space-around;
+}
+
+.title {
+  color: black;
+}
+
+.buttons {
+  display: flex;
+  gap: 5px;
+  text-decoration: none !important;
+}
+
+.button {
+  text-transform: none !important;
+}

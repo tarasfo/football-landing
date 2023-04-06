@@ -1,0 +1,141 @@
+.pricingSection {
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+  align-items: center;
+  justify-content: center;
+}
+
+.pricingSectionHeader {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+
+.pricingSectionTitle {
+  color: #3a3a47 !important;
+  font-weight: 800 !important;
+  line-height: 1.4 !important;
+  margin-bottom: 20px !important;
+  font-size: 32px !important;
+}
+
+.pricingSectionDescription {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  color: #abafb3;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.pricingSectionCards {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 50px;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.pricingCard {
+  width: 350px;
+  background-color: #f0f5f9 !important;
+  border-radius: 0 !important;
+  padding: 30px !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: none !important;
+}
+
+.cardTitle {
+  font-size: 24px !important;
+  font-weight: 800 !important;
+  color: #3a3a47 !important;
+  margin-bottom: 15px !important;
+}
+
+.cardSubtitle {
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  color: #abafb3 !important;
+  line-height: 1.4 !important;
+}
+
+.cardPriseDetails {
+  margin-top: 20px !important;
+  font-family: "Open Sans";
+  font-size: 42px !important;
+  font-weight: 100 !important;
+  color: #505050 !important;
+  margin-bottom: 5px !important;
+}
+
+.cardPricingPeriod {
+  font-size: 15px !important;
+  font-weight: 400 !important;
+  color: #505050 !important;
+  margin: 0px !important;
+}
+
+.cardBasicButton {
+  font-family: "Montserrat";
+  display: inline-block;
+  height: 42px;
+  padding: 0 30px 0 30px !important;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 40px !important;
+  letter-spacing: 1px;
+  line-height: 2.8;
+  margin: 15px 0 0 0 !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+  white-space: nowrap;
+  cursor: pointer;
+  background: #21bf73 !important;
+  color: #ffffff !important;
+  border: 2px solid #21bf73 !important;
+  border-radius: 5px;
+  box-sizing: border-box !important;
+}
+
+.cardPremiumButton {
+  font-family: "Montserrat";
+  display: inline-block;
+  height: 42px;
+  padding: 0 30px 0 30px !important;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 40px;
+  letter-spacing: 1px;
+  line-height: 2.8;
+  margin: 15px 0 0 0;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  white-space: nowrap;
+  cursor: pointer;
+  background-color: transparent;
+  color: #3498db !important;
+  border: 2px solid #3498db !important;
+}
+
+.cardPremiumButton:hover {
+  background-color: #3498db !important;
+  color: #ffffff !important;
+}
+
+.refundText {
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 25px;
+  color: #505050 !important;
+}

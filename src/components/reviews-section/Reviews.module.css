@@ -1,8 +1,61 @@
-.wrapper {
-  width: 3210px;
-  left: 0px;
-  display: block;
-  transform: translate3d(0px, 0px, 0px);
-  transition: all 1000ms ease 0s;
-  position: relative;
+.flexContainer {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+
+.flexColumnCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.container {
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  width: 60%;
+  justify-content: center;
+  margin-top: 50px;
+  gap: 50px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.title {
+  font-size: 34px;
+  font-weight: 800;
+  color: #383b61;
+  line-height: 1.2;
+  margin: 0;
+  padding: 0;
+  flex: 1 1 0%;
+}
+
+.subTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: #3498db;
+  line-height: 1.3;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.resultPercentage {
+  font-size: 28px;
+  font-weight: 700;
+  color: #383b61;
+  margin: 0;
+}
+
+.resultDescription {
+  font-size: 15px;
+  font-weight: 500;
+  padding: 0.5em;
+  color: #abafb3;
+  margin: 0;
 }
