@@ -24,8 +24,15 @@
   justify-content: space-around;
 }
 
+@media screen and (max-width: 600px) {
+  .toolbar {
+    justify-content: space-between;
+  }
+}
+
 .title {
   color: black;
+  font-size: 32px;
 }
 
 .buttons {

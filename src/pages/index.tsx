@@ -28,7 +28,14 @@ export default function Home({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main style={{ display: "flex", flexDirection: "column" }}>
+      <main
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          width: "100%",
+          height: "100%",
+        }}
+      >
         <Header download={download} header={header} />
         <ProductSection />
         <AboutSection />

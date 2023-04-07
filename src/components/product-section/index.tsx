@@ -25,7 +25,7 @@ function ProductSection() {
           <br /> No credit card required*
         </p>
       </Box>
-      <Image alt="" src="/head.png" width={600} height={400} />
+      <Image className={styles.productImage} alt="" src="/head.png" width={600} height={400} />
     </Box>
   );
 }

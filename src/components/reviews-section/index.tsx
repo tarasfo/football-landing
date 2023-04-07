@@ -8,35 +8,59 @@ import { Carousel } from "react-responsive-carousel";
 function ReviewsSection() {
   return (
     <Box id="Reviews" className={styles.container}>
-      <div >
+      <div>
         <h4 className={styles.subTitle}>OUR RESULTS</h4>
         <h2 className={styles.title}>Our awesome results worth displaying</h2>
       </div>
 
       <Box className={styles.flexContainer}>
         <div className={styles.flexColumnCenter}>
-          <Image src="/f1.png" alt="Icon" width={100} height={100} />
+          <Image
+            className={styles.icon}
+            src="/f1.png"
+            alt="Icon"
+            width={100}
+            height={100}
+          />
           <h3 className={styles.resultPercentage}>
             <span>47</span>%
           </h3>
           <h2 className={styles.resultDescription}>Mobile Users</h2>
         </div>
         <div className={styles.flexColumnCenter}>
-          <Image src="/f2.png" alt="Icon" width={100} height={100} />
+          <Image
+            className={styles.icon}
+            src="/f2.png"
+            alt="Icon"
+            width={100}
+            height={100}
+          />
           <h3 className={styles.resultPercentage}>
             <span>33</span>%
           </h3>
           <h2 className={styles.resultDescription}>Daily Views</h2>
         </div>
         <div className={styles.flexColumnCenter}>
-          <Image src="/f3.png" alt="Icon" width={100} height={100} />
+          <Image
+            className={styles.icon}
+            src="/f3.png"
+            alt="Icon"
+            width={100}
+            height={100}
+          />
           <h3 className={styles.resultPercentage}>
             <span>28</span>%
           </h3>
           <h2 className={styles.resultDescription}>Monthly Returns</h2>
         </div>
         <div className={styles.flexColumnCenter}>
-          <Image src="/f4.png" alt="Icon" width={100} height={100} />
+          <Image
+            className={styles.icon}
+            src="/f4.png"
+            alt="Icon"
+            width={100}
+            height={100}
+          />
           <h3 className={styles.resultPercentage}>
             <span>349</span>%
           </h3>
@@ -44,20 +68,7 @@ function ReviewsSection() {
         </div>
       </Box>
 
-      <div
-        id="reviews"
-        style={{
-          marginTop: "80px",
-          backgroundColor: "#F0F5F9",
-          flexDirection: "row",
-          display: "flex",
-          alignItems: "center",
-          width: "60%",
-          justifyContent: "center",
-          padding: "100px 50px 100px 50px",
-          gap: "50px",
-        }}
-      >
+      <div id="reviews" className={styles.reviewsContainer}>
         <div
           style={{
             textAlign: "left",
@@ -67,19 +78,7 @@ function ReviewsSection() {
             padding: "50px",
           }}
         >
-          <h2
-            style={{
-              fontSize: "34px",
-              fontWeight: 800,
-              color: "#383B61",
-              lineHeight: 1.2,
-              margin: "0",
-              padding: "0",
-              flex: "1 1 0%",
-            }}
-          >
-            Stories from our customers
-          </h2>
+          <h2 className={styles.reviewsTitle}>Stories from our customers</h2>
           <p
             style={{
               margin: "0",
@@ -96,9 +95,9 @@ function ReviewsSection() {
             attractive.
           </p>
         </div>
-        <Box style={{ maxWidth: "535px" }}>
+        <div className={styles.carouselContainer}>
           <Carousel
-            autoPlay={true}
+            //autoPlay={true}
             infiniteLoop={true}
             showStatus={false}
             showThumbs={false}
@@ -107,35 +106,16 @@ function ReviewsSection() {
             swipeable={true}
             emulateTouch={true}
           >
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "20px",
-                maxWidth: "535px",
-              }}
-            >
+            <div className={styles.reviewCardCOntainer}>
               <div style={{ display: "flex", textAlign: "left", gap: "5px" }}>
                 <Image
-                  style={{
-                    display: "inline",
-                    padding: "0",
-                    maxWidth: "32px",
-                  }}
+                  className={styles.quoteIcon}
                   src="quote.svg"
                   alt="Quote"
                   width={32}
                   height={32}
                 />
-                <span
-                  style={{
-                    textAlign: "justify",
-                    fontSize: "18px",
-                    color: "#6A7076",
-                    fontWeight: 500,
-                    lineHeight: "1.6",
-                  }}
-                >
+                <span className={styles.reviewText}>
                   Pariatur cliche reprehenderit, enim eiusmod high life
                   accusamus terry richardson ad squid. We use Connect for key
                   for easy and seamless weekly communication with our clients
@@ -188,35 +168,16 @@ function ReviewsSection() {
                 </div>
               </div>
             </div>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "20px",
-                maxWidth: "535px",
-              }}
-            >
+            <div className={styles.reviewCardCOntainer}>
               <div style={{ display: "flex", textAlign: "left", gap: "5px" }}>
                 <Image
-                  style={{
-                    display: "inline",
-                    padding: "0",
-                    maxWidth: "32px",
-                  }}
+                  className={styles.quoteIcon}
                   src="quote.svg"
                   alt="Quote"
                   width={32}
                   height={32}
                 />
-                <span
-                  style={{
-                    textAlign: "justify",
-                    fontSize: "18px",
-                    color: "#6A7076",
-                    fontWeight: 500,
-                    lineHeight: "1.6",
-                  }}
-                >
+                <span className={styles.reviewText}>
                   Pariatur cliche reprehenderit, enim eiusmod high life
                   accusamus terry richardson ad squid. We use Connect for key
                   for easy and seamless weekly communication with our clients
@@ -269,35 +230,16 @@ function ReviewsSection() {
                 </div>
               </div>
             </div>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "20px",
-                maxWidth: "535px",
-              }}
-            >
+            <div className={styles.reviewCardCOntainer}>
               <div style={{ display: "flex", textAlign: "left", gap: "5px" }}>
                 <Image
-                  style={{
-                    display: "inline",
-                    padding: "0",
-                    maxWidth: "32px",
-                  }}
+                  className={styles.quoteIcon}
                   src="quote.svg"
                   alt="Quote"
                   width={32}
                   height={32}
                 />
-                <span
-                  style={{
-                    textAlign: "justify",
-                    fontSize: "18px",
-                    color: "#6A7076",
-                    fontWeight: 500,
-                    lineHeight: "1.6",
-                  }}
-                >
+                <span className={styles.reviewText}>
                   We use Connect for key for easy and seamless weekly
                   communication with our clients. Pariatur cliche reprehenderit,
                   enim eiusmod high life accusamus terry richardson ad squid.
@@ -350,7 +292,7 @@ function ReviewsSection() {
               </div>
             </div>
           </Carousel>
-        </Box>
+        </div>
       </div>
     </Box>
   );

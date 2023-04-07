@@ -8,7 +8,13 @@ function FeaturesSection() {
     <Box id="Features" className={styles.outerBox}>
       <Box className={styles.innerBox}>
         <div className={styles.row}>
-          <Image src="/support.png" alt="Feature" height={240} width={350} />
+          <Image
+            className={styles.image}
+            src="/support.png"
+            alt="Feature"
+            height={240}
+            width={350}
+          />
 
           <div className={styles.textContainer}>
             <h2 className={styles.title}>Data Sharing.</h2>
@@ -53,7 +59,13 @@ function FeaturesSection() {
         </div>
 
         <div className={`${styles.row} ${styles.rowReverse}`}>
-          <Image src="/write.png" alt="Feature" height={240} width={350} />
+          <Image
+            className={styles.image}
+            src="/write.png"
+            alt="Feature"
+            height={240}
+            width={350}
+          />
 
           <div className={styles.textContainer}>
             <h2 className={styles.title}>High Definition</h2>
