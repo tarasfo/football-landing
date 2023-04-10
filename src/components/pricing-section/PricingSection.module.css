@@ -43,6 +43,8 @@
 
 .pricingCard {
   width: 350px;
+  max-height: 500px;
+  min-height: 500px;
   background-color: #f0f5f9 !important;
   border-radius: 0 !important;
   padding: 30px !important;

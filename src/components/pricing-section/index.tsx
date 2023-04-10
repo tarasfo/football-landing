@@ -9,45 +9,49 @@ import {
 import React from "react";
 import style from "./PricingSection.module.css";
 import Image from "next/image";
+import { getLocale } from "next-g11n";
+import { useRouter } from "next/router";
 
-function PricingSection() {
+function PricingSection({ pricingSectionKeys }: { pricingSectionKeys: any }) {
+  const router = useRouter();
+  const g11nLocale = getLocale(router) || "en";
+
   return (
     <Box id="Pricing" className={style.pricingSection}>
       <Box className={style.pricingSectionHeader}>
         <Typography variant="h2" className={style.pricingSectionTitle}>
-          Simple & Affordable Pricing.
+         {pricingSectionKeys.pricingTitle[g11nLocale]}
         </Typography>
         <p className={style.pricingSectionDescription}>
-          Our plans are designed to meet the requirements of both beginners and
-          players. Get the right plan that suits you.
+        {pricingSectionKeys.pricingDescription[g11nLocale]}
         </p>
       </Box>
       <Box className={style.pricingSectionCards}>
         <Card className={style.pricingCard}>
           <CardContent>
-            <Typography className={style.cardTitle}>Basic Free</Typography>
+            <Typography className={style.cardTitle}>{pricingSectionKeys.pricingBasic[g11nLocale]}</Typography>
             <Typography
               className={style.cardSubtitle}
               variant="h5"
               component="div"
             >
-              Limited features
+              {pricingSectionKeys.pricingBasicDescription[g11nLocale]}
             </Typography>
             <Image src="/f1.png" width={120} height={120} alt="icon" />
             <Typography className={style.cardPriseDetails} gutterBottom>
-              Free
+              {pricingSectionKeys.free[g11nLocale]}
             </Typography>
             <Typography
               className={style.cardPricingPeriod}
               variant="h5"
               component="div"
             >
-              One year
+              {pricingSectionKeys.pricingBasicPeriod[g11nLocale]}
             </Typography>
           </CardContent>
           <CardActions>
             <Button className={style.cardBasicButton} size="small">
-              DOWNLOAD
+              {pricingSectionKeys.download[g11nLocale]}
             </Button>
           </CardActions>
         </Card>
@@ -55,36 +59,36 @@ function PricingSection() {
         <Card className={style.pricingCard}>
           <CardContent>
             <Typography className={style.cardTitle} gutterBottom>
-              Premium
+              {pricingSectionKeys.pricingPremiumTitle[g11nLocale]}
             </Typography>
             <Typography
               className={style.cardSubtitle}
               variant="h5"
               component="div"
             >
-              Unlimited Lifetime
+              {pricingSectionKeys.pricingPremiumDescription[g11nLocale]}
             </Typography>
             <Image src="/f3.png" width={120} height={120} alt="icon" />
             <Typography className={style.cardPriseDetails} gutterBottom>
-              $99.99
+              {pricingSectionKeys.pricingPremium[g11nLocale]}
             </Typography>
             <Typography
               className={style.cardPricingPeriod}
               variant="h5"
               component="div"
             >
-              Lifetime
+              {pricingSectionKeys.pricingPremiumPeriod[g11nLocale]}
             </Typography>
           </CardContent>
           <CardActions>
             <Button className={style.cardPremiumButton} size="small">
-              subscribe
+              {pricingSectionKeys.subscribe[g11nLocale]}
             </Button>
           </CardActions>
         </Card>
       </Box>
       <p className={style.refundText}>
-        * Refund requests can be accepted with in 10 days of the purchase.
+        {pricingSectionKeys.refund[g11nLocale]}
       </p>
     </Box>
   );

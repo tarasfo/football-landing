@@ -10,9 +10,11 @@ import styles from "./Footer.module.css";
 
 import { IoLanguageOutline } from "react-icons/io5";
 import { FiMoreVertical } from "react-icons/fi";
+import { getLocale } from "next-g11n";
 
-function Footer() {
-  const { locale } = useRouter();
+function Footer({ footerSectionKeys }: { footerSectionKeys: any }) {
+  const router = useRouter();
+  const g11nLocale = getLocale(router) || "en";
 
   const matches = useMediaQuery("(min-width:600px)");
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -35,11 +37,25 @@ function Footer() {
     >
       <Box component={"footer"} className={styles.footerContainer}>
         <Typography className={styles.logo}>C O N N E C T.</Typography>
-        <Box className={styles.textContainer}>
-          <Typography>About</Typography>
-          <Typography>Privacy</Typography>
-          <Typography>Terms</Typography>
-          <Typography>Contact</Typography>
+        <Box
+          className={
+            g11nLocale === "en"
+              ? styles.textContainerEN
+              : styles.textContainerUA
+          }
+        >
+          <Typography style={{ textAlign: "center" }}>
+            {footerSectionKeys.about[g11nLocale]}
+          </Typography>
+          <Typography style={{ textAlign: "center" }}>
+            {footerSectionKeys.privacy[g11nLocale]}
+          </Typography>
+          <Typography style={{ textAlign: "center" }}>
+            {footerSectionKeys.terms[g11nLocale]}
+          </Typography>
+          <Typography style={{ textAlign: "center" }}>
+            {footerSectionKeys.contact[g11nLocale]}
+          </Typography>
         </Box>
         <Box className={styles.iconContainer}>
           {matches ? (

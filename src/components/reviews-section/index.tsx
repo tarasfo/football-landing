@@ -4,13 +4,22 @@ import Image from "next/image";
 import styles from "./Reviews.module.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
+import { useRouter } from "next/router";
+import { getLocale } from "next-g11n";
 
-function ReviewsSection() {
+function ReviewsSection({ reviewsSectionKeys }: { reviewsSectionKeys: any }) {
+  const router = useRouter();
+  const g11nLocale = getLocale(router) || "en";
+
   return (
     <Box id="Reviews" className={styles.container}>
       <div>
-        <h4 className={styles.subTitle}>OUR RESULTS</h4>
-        <h2 className={styles.title}>Our awesome results worth displaying</h2>
+        <h4 className={styles.subTitle}>
+          {reviewsSectionKeys.results[g11nLocale]}
+        </h4>
+        <h2 className={styles.title}>
+          {reviewsSectionKeys.resultsDescription[g11nLocale]}
+        </h2>
       </div>
 
       <Box className={styles.flexContainer}>
@@ -25,7 +34,9 @@ function ReviewsSection() {
           <h3 className={styles.resultPercentage}>
             <span>47</span>%
           </h3>
-          <h2 className={styles.resultDescription}>Mobile Users</h2>
+          <h2 className={styles.resultDescription}>
+            {reviewsSectionKeys.mobileUsers[g11nLocale]}
+          </h2>
         </div>
         <div className={styles.flexColumnCenter}>
           <Image
@@ -38,7 +49,9 @@ function ReviewsSection() {
           <h3 className={styles.resultPercentage}>
             <span>33</span>%
           </h3>
-          <h2 className={styles.resultDescription}>Daily Views</h2>
+          <h2 className={styles.resultDescription}>
+            {reviewsSectionKeys.dallyViews[g11nLocale]}
+          </h2>
         </div>
         <div className={styles.flexColumnCenter}>
           <Image
@@ -51,7 +64,9 @@ function ReviewsSection() {
           <h3 className={styles.resultPercentage}>
             <span>28</span>%
           </h3>
-          <h2 className={styles.resultDescription}>Monthly Returns</h2>
+          <h2 className={styles.resultDescription}>
+            {reviewsSectionKeys.monthlyReturns[g11nLocale]}
+          </h2>
         </div>
         <div className={styles.flexColumnCenter}>
           <Image
@@ -64,7 +79,9 @@ function ReviewsSection() {
           <h3 className={styles.resultPercentage}>
             <span>349</span>%
           </h3>
-          <h2 className={styles.resultDescription}>Annual Growth</h2>
+          <h2 className={styles.resultDescription}>
+            {reviewsSectionKeys.annualGrow[g11nLocale]}
+          </h2>
         </div>
       </Box>
 
@@ -78,7 +95,9 @@ function ReviewsSection() {
             padding: "50px",
           }}
         >
-          <h2 className={styles.reviewsTitle}>Stories from our customers</h2>
+          <h2 className={styles.reviewsTitle}>
+            {reviewsSectionKeys.reviewTitle[g11nLocale]}
+          </h2>
           <p
             style={{
               margin: "0",
@@ -91,8 +110,7 @@ function ReviewsSection() {
               marginTop: "15px",
             }}
           >
-            When you get staright to the point the presentation looks
-            attractive.
+            {reviewsSectionKeys.reviewDescription[g11nLocale]}
           </p>
         </div>
         <div className={styles.carouselContainer}>
@@ -116,10 +134,7 @@ function ReviewsSection() {
                   height={32}
                 />
                 <span className={styles.reviewText}>
-                  Pariatur cliche reprehenderit, enim eiusmod high life
-                  accusamus terry richardson ad squid. We use Connect for key
-                  for easy and seamless weekly communication with our clients
-                  and .
+                  {reviewsSectionKeys.review1[g11nLocale]}
                 </span>
               </div>
 
@@ -178,10 +193,7 @@ function ReviewsSection() {
                   height={32}
                 />
                 <span className={styles.reviewText}>
-                  Pariatur cliche reprehenderit, enim eiusmod high life
-                  accusamus terry richardson ad squid. We use Connect for key
-                  for easy and seamless weekly communication with our clients
-                  and .
+                  {reviewsSectionKeys.review2[g11nLocale]}
                 </span>
               </div>
 
@@ -240,9 +252,7 @@ function ReviewsSection() {
                   height={32}
                 />
                 <span className={styles.reviewText}>
-                  We use Connect for key for easy and seamless weekly
-                  communication with our clients. Pariatur cliche reprehenderit,
-                  enim eiusmod high life accusamus terry richardson ad squid.
+                  {reviewsSectionKeys.review3[g11nLocale]}
                 </span>
               </div>
 

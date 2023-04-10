@@ -19,6 +19,14 @@ import ConnectSection from "@/components/connect-section";
 export default function Home({
   header,
   download,
+  productSectionKeys,
+  aboutSectionKeys,
+  featuresSectionKeys,
+  reviewsSectionKeys,
+  pricingSectionKeys,
+  faqSectionKeys,
+  connectSectionKeys,
+  footerSectionKeys
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
@@ -37,14 +45,14 @@ export default function Home({
         }}
       >
         <Header download={download} header={header} />
-        <ProductSection />
-        <AboutSection />
-        <FeaturesSection />
-        <ReviewsSection />
-        <PricingSection />
-        <FAQSection />
-        <ConnectSection />
-        <Footer />
+        <ProductSection productSectionKeys={productSectionKeys} />
+        <AboutSection aboutSectionKeys={aboutSectionKeys} />
+        <FeaturesSection featuresSectionKeys={featuresSectionKeys} />
+        <ReviewsSection reviewsSectionKeys={reviewsSectionKeys} />
+        <PricingSection  pricingSectionKeys={pricingSectionKeys}/>
+        <FAQSection faqSectionKeys={faqSectionKeys}/>
+        <ConnectSection connectSectionKeys={connectSectionKeys}/>
+        <Footer footerSectionKeys={footerSectionKeys} />
       </main>
     </>
   );
@@ -60,10 +68,258 @@ export const getStaticProps = async () => {
 
   const header = [product, features, reviews, pricing, faq];
 
+  // product section
+
+  const launch = createStaticTerm<Keys, Locales>("launch", dictionary);
+  const connect = createStaticTerm<Keys, Locales>("connect", dictionary);
+  const seeMore = createStaticTerm<Keys, Locales>("see-more", dictionary);
+  const trial = createStaticTerm<Keys, Locales>("trial", dictionary);
+  const noCredit = createStaticTerm<Keys, Locales>(
+    "no-credit-card",
+    dictionary
+  );
+
+  const productSectionKeys = {
+    launch,
+    connect,
+    seeMore,
+    trial,
+    noCredit,
+    download,
+  };
+
+  // about section
+
+  const inside = createStaticTerm<Keys, Locales>("inside", dictionary);
+  const aboutTitle = createStaticTerm<Keys, Locales>("about-title", dictionary);
+  const aboutDescription = createStaticTerm<Keys, Locales>(
+    "about-description",
+    dictionary
+  );
+  const layout = createStaticTerm<Keys, Locales>("layout", dictionary);
+  const layoutDescription = createStaticTerm<Keys, Locales>(
+    "layout-description",
+    dictionary
+  );
+
+  const aboutSectionKeys = {
+    inside,
+    aboutTitle,
+    aboutDescription,
+    layout,
+    layoutDescription,
+  };
+
+  // features section
+
+  const data = createStaticTerm<Keys, Locales>("data", dictionary);
+  const dataDescription = createStaticTerm<Keys, Locales>(
+    "data-description",
+    dictionary
+  );
+  const definition = createStaticTerm<Keys, Locales>("definition", dictionary);
+  const definitionDescription = createStaticTerm<Keys, Locales>(
+    "definition-description",
+    dictionary
+  );
+  const broadcasts = createStaticTerm<Keys, Locales>("broadcasts", dictionary);
+  const upload = createStaticTerm<Keys, Locales>("upload", dictionary);
+  const stats = createStaticTerm<Keys, Locales>("stats", dictionary);
+
+  const featuresSectionKeys = {
+    data,
+    dataDescription,
+    definition,
+    definitionDescription,
+    broadcasts,
+    upload,
+    stats,
+  };
+
+  // reviews section
+
+  const results = createStaticTerm<Keys, Locales>("results", dictionary);
+  const resultsDescription = createStaticTerm<Keys, Locales>(
+    "results-description",
+    dictionary
+  );
+  const mobileUsers = createStaticTerm<Keys, Locales>(
+    "mobile-users",
+    dictionary
+  );
+  const dallyViews = createStaticTerm<Keys, Locales>("dally", dictionary);
+  const annualGrow = createStaticTerm<Keys, Locales>("annual-grow", dictionary);
+  const monthlyReturns = createStaticTerm<Keys, Locales>(
+    "monthly-returns",
+    dictionary
+  );
+  const reviewTitle = createStaticTerm<Keys, Locales>(
+    "reviewTitle",
+    dictionary
+  );
+  const reviewDescription = createStaticTerm<Keys, Locales>(
+    "review-description",
+    dictionary
+  );
+  const review1 = createStaticTerm<Keys, Locales>("review-1", dictionary);
+  const review2 = createStaticTerm<Keys, Locales>("review-2", dictionary);
+  const review3 = createStaticTerm<Keys, Locales>("review-3", dictionary);
+
+  const reviewsSectionKeys = {
+    results,
+    resultsDescription,
+    mobileUsers,
+    dallyViews,
+    annualGrow,
+    monthlyReturns,
+    reviewTitle,
+    reviewDescription,
+    review1,
+    review2,
+    review3,
+  };
+
+  // pricing section
+
+  const pricingTitle = createStaticTerm<Keys, Locales>(
+    "pricing-title",
+    dictionary
+  );
+  const pricingDescription = createStaticTerm<Keys, Locales>(
+    "pricing-description",
+    dictionary
+  );
+  const pricingBasic = createStaticTerm<Keys, Locales>(
+    "pricing-basic",
+    dictionary
+  );
+  const pricingBasicDescription = createStaticTerm<Keys, Locales>(
+    "pricing-basic-description",
+    dictionary
+  );
+  const free = createStaticTerm<Keys, Locales>("free", dictionary);
+  const pricingBasicPeriod = createStaticTerm<Keys, Locales>(
+    "pricing-basic-period",
+    dictionary
+  );
+  const pricingPremiumTitle = createStaticTerm<Keys, Locales>(
+    "pricing-premium-title",
+    dictionary
+  );
+  const pricingPremiumDescription = createStaticTerm<Keys, Locales>(
+    "pricing-premium-description",
+    dictionary
+  );
+  const pricingPremiumPeriod = createStaticTerm<Keys, Locales>(
+    "pricing-premium-period",
+    dictionary
+  );
+  const pricingPremium = createStaticTerm<Keys, Locales>(
+    "pricing-premium",
+    dictionary
+  );
+  const subscribe = createStaticTerm<Keys, Locales>("subscribe", dictionary);
+  const refund = createStaticTerm<Keys, Locales>("refund", dictionary);
+
+  const pricingSectionKeys = {
+    pricingTitle,
+    pricingDescription,
+    pricingBasic,
+    pricingBasicDescription,
+    free,
+    pricingBasicPeriod,
+    pricingPremiumTitle,
+    pricingPremiumDescription,
+    pricingPremiumPeriod,
+    pricingPremium,
+    subscribe,
+    refund,
+    download
+  };
+
+  // FAQ section
+
+  const faqTitle = createStaticTerm<Keys, Locales>("faq-title", dictionary);
+  const faqDescription = createStaticTerm<Keys, Locales>(
+    "faq-description",
+    dictionary
+  );
+  const questions = createStaticTerm<Keys, Locales>("questions", dictionary);
+  const contactUs = createStaticTerm<Keys, Locales>("contact-us", dictionary);
+  const faqQuestion1 = createStaticTerm<Keys, Locales>("faq-1", dictionary);
+  const faqAnswer1 = createStaticTerm<Keys, Locales>(
+    "faq-1-description",
+    dictionary
+  );
+  const faqQuestion2 = createStaticTerm<Keys, Locales>("faq-2", dictionary);
+  const faqAnswer2 = createStaticTerm<Keys, Locales>(
+    "faq-2-description",
+    dictionary
+  );
+  const faqQuestion3 = createStaticTerm<Keys, Locales>("faq-3", dictionary);
+  const faqAnswer3 = createStaticTerm<Keys, Locales>(
+    "faq-3-description",
+    dictionary
+  );
+  const faqQuestion4 = createStaticTerm<Keys, Locales>("faq-4", dictionary);
+  const faqAnswer4 = createStaticTerm<Keys, Locales>(
+    "faq-4-description",
+    dictionary
+  );
+
+  const faqSectionKeys = {
+    faqTitle,
+    faqDescription,
+    questions,
+    contactUs,
+    faqQuestion1,
+    faqAnswer1,
+    faqQuestion2,
+    faqAnswer2,
+    faqQuestion3,
+    faqAnswer3,
+    faqQuestion4,
+    faqAnswer4,
+  };
+
+  // contact section
+
+  const startTrial = createStaticTerm<Keys, Locales>("start-trial", dictionary);
+  const contactTitle = createStaticTerm<Keys, Locales>("contact-title", dictionary);
+  const email = createStaticTerm<Keys, Locales>("email", dictionary);
+
+  const contactSectionKeys = {
+    startTrial,
+    contactTitle,
+    email,
+  };
+
+  // footer section
+
+  const about = createStaticTerm<Keys, Locales>("about", dictionary);
+  const contact = createStaticTerm<Keys, Locales>("contact", dictionary);
+  const terms = createStaticTerm<Keys, Locales>("terms", dictionary);
+  const privacy = createStaticTerm<Keys, Locales>("privacy", dictionary);
+
+  const footerSectionKeys = {
+    about,
+    contact,
+    terms,
+    privacy,
+  };
+
   return {
     props: {
       header: header,
       download: download,
+      productSectionKeys: productSectionKeys,
+      aboutSectionKeys: aboutSectionKeys,
+      featuresSectionKeys: featuresSectionKeys,
+      reviewsSectionKeys: reviewsSectionKeys,
+      pricingSectionKeys: pricingSectionKeys,
+      faqSectionKeys: faqSectionKeys,
+      connectSectionKeys: contactSectionKeys,
+      footerSectionKeys:footerSectionKeys
     },
   };
 };

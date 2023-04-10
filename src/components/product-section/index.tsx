@@ -3,29 +3,39 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import styles from "./Product.module.css";
+import { useRouter } from "next/router";
+import { getLocale } from "next-g11n";
 
-function ProductSection() {
+function ProductSection({ productSectionKeys }: { productSectionKeys: any }) {
+  const router = useRouter();
+  const g11nLocale = getLocale(router) || "en";
   return (
     <Box id="Product" className={styles.productSection}>
       <Box className={styles.productContent}>
         <Box className={styles.productText}>
-          <h4>Launch your product</h4>
+          <h4>{productSectionKeys.launch[g11nLocale]}</h4>
           <h2 className={styles.productTitle}>
-            Connect better with interactive stream.
+            {productSectionKeys.connect[g11nLocale]}
           </h2>
           <Link className={styles.productLink} href="#features">
-            See More
+            {productSectionKeys.seeMore[g11nLocale]}
           </Link>
           <Link className={styles.downloadButton} href="#">
-            Download
+            {productSectionKeys.download[g11nLocale]}
           </Link>
         </Box>
         <p className={styles.conditionsText}>
-          Free unrestricted usage for 14 days.
-          <br /> No credit card required*
+          {productSectionKeys.trial[g11nLocale]}
+          <br /> {productSectionKeys.noCredit[g11nLocale]}
         </p>
       </Box>
-      <Image className={styles.productImage} alt="" src="/head.png" width={600} height={400} />
+      <Image
+        className={styles.productImage}
+        alt=""
+        src="/head.png"
+        width={600}
+        height={400}
+      />
     </Box>
   );
 }

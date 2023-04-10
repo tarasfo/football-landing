@@ -11,37 +11,45 @@ import style from "./FAQ.module.css";
 
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import FAQAccordion from "./components";
+import { useRouter } from "next/router";
+import { getLocale } from "next-g11n";
 
-function FAQSection() {
+function FAQSection({ faqSectionKeys }: { faqSectionKeys: any }) {
+  const router = useRouter();
+  const g11nLocale = getLocale(router) || "en";
+
   return (
     <Box id="FAQ" className={style.faqContainer}>
       <Box className={style.headingContainer}>
-        <h2 className={style.mainHeading}>Frequently Asked Queries</h2>
+        <h2 className={style.mainHeading}>
+          {faqSectionKeys.faqTitle[g11nLocale]}
+        </h2>
         <p className={style.subHeading}>
-          Pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-          richardson ad squid.
+          {faqSectionKeys.faqDescription[g11nLocale]}
         </p>
-        <h5 className={style.additionalInfo}>Still have questions?</h5>
+        <h5 className={style.additionalInfo}>
+          {faqSectionKeys.questions[g11nLocale]}
+        </h5>
         <a className={style.contactLink} href="#">
-          Contact us
+          {faqSectionKeys.contactUs[g11nLocale]}
         </a>
       </Box>
       <Box className={style.accordionGrid}>
         <FAQAccordion
-          title="What is Connect?"
-          description="Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS."
+          title={faqSectionKeys.faqQuestion1[g11nLocale]}
+          description={faqSectionKeys.faqAnswer1[g11nLocale]}
         />
         <FAQAccordion
-          title="How much does template cost?"
-          description="Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS."
+          title={faqSectionKeys.faqQuestion2[g11nLocale]}
+          description={faqSectionKeys.faqAnswer2[g11nLocale]}
         />
         <FAQAccordion
-          title="How can updates be downloaded?"
-          description="Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS."
+          title={faqSectionKeys.faqQuestion3[g11nLocale]}
+          description={faqSectionKeys.faqAnswer3[g11nLocale]}
         />
         <FAQAccordion
-          title="Some other Support related queries."
-          description="Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS."
+          title={faqSectionKeys.faqQuestion4[g11nLocale]}
+          description={faqSectionKeys.faqAnswer4[g11nLocale]}
         />
       </Box>
     </Box>

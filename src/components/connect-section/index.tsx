@@ -1,14 +1,21 @@
 import { Box } from "@material-ui/core";
 import React from "react";
 import styles from "./Connect.module.css";
+import { getLocale } from "next-g11n";
+import { useRouter } from "next/router";
 
-function ConnectSection() {
+function ConnectSection({ connectSectionKeys }: { connectSectionKeys: any }) {
+  const router = useRouter();
+  const g11nLocale = getLocale(router) || "en";
+
   return (
     <Box id="cta" className={styles.container}>
       <Box className={styles.innerContainer}>
-        <h4 className={styles.startTrial}>start your trial</h4>
+        <h4 className={styles.startTrial}>
+          {connectSectionKeys.startTrial[g11nLocale]}
+        </h4>
         <h2 className={styles.connectTitle}>
-          Connect is made just for you. Ready to build your next project?
+          {connectSectionKeys.contactTitle[g11nLocale]}
         </h2>
       </Box>
 
@@ -18,7 +25,7 @@ function ConnectSection() {
             className={styles.emailInput}
             type="email"
             name="email"
-            placeholder="Enter email address"
+            placeholder={connectSectionKeys.email[g11nLocale]}
           />
           <input
             className={styles.submitButton}

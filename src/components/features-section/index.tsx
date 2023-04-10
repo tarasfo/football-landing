@@ -2,8 +2,17 @@ import { Box } from "@material-ui/core";
 import React from "react";
 import Image from "next/image";
 import styles from "./Features.module.css";
+import { useRouter } from "next/router";
+import { getLocale } from "next-g11n";
 
-function FeaturesSection() {
+function FeaturesSection({
+  featuresSectionKeys,
+}: {
+  featuresSectionKeys: any;
+}) {
+  const router = useRouter();
+  const g11nLocale = getLocale(router) || "en";
+
   return (
     <Box id="Features" className={styles.outerBox}>
       <Box className={styles.innerBox}>
@@ -17,11 +26,11 @@ function FeaturesSection() {
           />
 
           <div className={styles.textContainer}>
-            <h2 className={styles.title}>Data Sharing.</h2>
-
+            <h2 className={styles.title}>
+              {featuresSectionKeys.data[g11nLocale]}
+            </h2>
             <p className={styles.paragraph}>
-              When you get staright to the point the presentation looks
-              attractive on your web pages.
+              {featuresSectionKeys.dataDescription[g11nLocale]}
             </p>
             <ul className={styles.list}>
               <li className={styles.listItem}>
@@ -32,7 +41,7 @@ function FeaturesSection() {
                   width={24}
                   className={styles.tickIcon}
                 />
-                Realtime broadcasts
+                {featuresSectionKeys.broadcasts[g11nLocale]}
               </li>
               <li className={styles.listItem}>
                 <Image
@@ -42,7 +51,7 @@ function FeaturesSection() {
                   width={24}
                   className={styles.tickIcon}
                 />
-                Upload and sit tight
+                {featuresSectionKeys.upload[g11nLocale]}
               </li>
               <li className={styles.listItem}>
                 <Image
@@ -52,7 +61,7 @@ function FeaturesSection() {
                   width={24}
                   className={styles.tickIcon}
                 />
-                View realtime stats
+                {featuresSectionKeys.stats[g11nLocale]}
               </li>
             </ul>
           </div>
@@ -68,10 +77,11 @@ function FeaturesSection() {
           />
 
           <div className={styles.textContainer}>
-            <h2 className={styles.title}>High Definition</h2>
+            <h2 className={styles.title}>
+              {featuresSectionKeys.definition[g11nLocale]}
+            </h2>
             <p className={styles.paragraph}>
-              When you get staright to the point the presentation looks
-              attractive on your web pages.
+              {featuresSectionKeys.definitionDescription[g11nLocale]}
             </p>
             <ul className={styles.list}>
               <li className={styles.listItem}>
@@ -82,7 +92,7 @@ function FeaturesSection() {
                   width={24}
                   className={styles.tickIcon}
                 />
-                Realtime broadcasts
+                {featuresSectionKeys.broadcasts[g11nLocale]}
               </li>
               <li className={styles.listItem}>
                 <Image
@@ -92,7 +102,7 @@ function FeaturesSection() {
                   width={24}
                   className={styles.tickIcon}
                 />
-                Upload and sit tight
+                {featuresSectionKeys.upload[g11nLocale]}
               </li>
               <li className={styles.listItem}>
                 <Image
@@ -102,7 +112,7 @@ function FeaturesSection() {
                   width={24}
                   className={styles.tickIcon}
                 />
-                View realtime stats
+                {featuresSectionKeys.stats[g11nLocale]}
               </li>
             </ul>
           </div>
