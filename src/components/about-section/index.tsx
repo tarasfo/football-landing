@@ -13,9 +13,9 @@ function AboutSection({ aboutSectionKeys }: any) {
     <Box className={styles.box}>
       <div className={styles.aboutTextContainer}>
         <div className={styles.textContainer}>
-          <h4 className={styles.aboutTitle}>
+          <div className={styles.aboutTitle}>
             {aboutSectionKeys.inside[g11nLocale]}
-          </h4>
+          </div>
           <h2 className={styles.aboutSubtitle}>
             {aboutSectionKeys.aboutTitle[g11nLocale]}
           </h2>

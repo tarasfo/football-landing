@@ -14,9 +14,9 @@ function ReviewsSection({ reviewsSectionKeys }: { reviewsSectionKeys: any }) {
   return (
     <Box id="Reviews" className={styles.container}>
       <div>
-        <h4 className={styles.subTitle}>
+        <div className={styles.subTitle}>
           {reviewsSectionKeys.results[g11nLocale]}
-        </h4>
+        </div>
         <h2 className={styles.title}>
           {reviewsSectionKeys.resultsDescription[g11nLocale]}
         </h2>

@@ -48,10 +48,20 @@ function Footer({ footerSectionKeys }: { footerSectionKeys: any }) {
             {footerSectionKeys.about[g11nLocale]}
           </Typography>
           <Typography style={{ textAlign: "center" }}>
-            {footerSectionKeys.privacy[g11nLocale]}
+            <Link
+              style={{ textDecoration: "none", color: "inherit" }}
+              href="/privacy"
+            >
+              {footerSectionKeys.privacy[g11nLocale]}
+            </Link>
           </Typography>
           <Typography style={{ textAlign: "center" }}>
-            {footerSectionKeys.terms[g11nLocale]}
+            <Link
+              style={{ textDecoration: "none", color: "inherit" }}
+              href="/terms"
+            >
+              {footerSectionKeys.terms[g11nLocale]}
+            </Link>
           </Typography>
           <Typography style={{ textAlign: "center" }}>
             {footerSectionKeys.contact[g11nLocale]}

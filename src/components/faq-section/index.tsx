@@ -1,10 +1,4 @@
-import {
-  Accordion,
-  AccordionSummary,
-  Typography,
-  AccordionDetails,
-  Box,
-} from "@material-ui/core";
+import { Box } from "@material-ui/core";
 import React from "react";
 
 import style from "./FAQ.module.css";
@@ -27,9 +21,9 @@ function FAQSection({ faqSectionKeys }: { faqSectionKeys: any }) {
         <p className={style.subHeading}>
           {faqSectionKeys.faqDescription[g11nLocale]}
         </p>
-        <h5 className={style.additionalInfo}>
+        <div className={style.additionalInfo}>
           {faqSectionKeys.questions[g11nLocale]}
-        </h5>
+        </div>
         <a className={style.contactLink} href="#">
           {faqSectionKeys.contactUs[g11nLocale]}
         </a>

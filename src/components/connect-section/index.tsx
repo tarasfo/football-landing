@@ -11,9 +11,9 @@ function ConnectSection({ connectSectionKeys }: { connectSectionKeys: any }) {
   return (
     <Box id="cta" className={styles.container}>
       <Box className={styles.innerContainer}>
-        <h4 className={styles.startTrial}>
+        <div className={styles.startTrial}>
           {connectSectionKeys.startTrial[g11nLocale]}
-        </h4>
+        </div>
         <h2 className={styles.connectTitle}>
           {connectSectionKeys.contactTitle[g11nLocale]}
         </h2>
