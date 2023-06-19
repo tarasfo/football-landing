@@ -7,12 +7,11 @@
 }
 
 .aboutTitle {
-  font-size: 13px;
+  font-size: 24px;
   font-weight: 600;
-  color: #21bf73;
   line-height: 1.2;
   letter-spacing: 1px;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .aboutSubtitle {
@@ -33,6 +32,7 @@
 }
 
 .cardTitle {
+  margin-top: 30px;
   font-size: 18px;
   font-weight: 700;
   color: #383b61;
@@ -54,7 +54,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 50px 20%;
+  padding: 50px 10%;
 }
 
 .textContainer {
@@ -65,15 +65,17 @@
 
 .cardWrapper {
   display: flex;
-  gap: 30px;
-  margin-top: 30px;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .card1,
 .card2,
 .card3 {
-  padding: 50px;
+  padding: 20px;
+  min-height: 400px;
+  width: 30%;
+  margin-top: 30px;
 }
 
 .card1 {
@@ -91,13 +93,19 @@
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .box {
     padding: 50px 5%;
-    gap: 0px;
+    gap: 30px;
   }
 
   .textContainer {
     flex: 0.5;
     text-align: left;
     width: 100%;
+  }
+
+  .card1,
+  .card2,
+  .card3 {
+    width: 49%;
   }
 }
 
@@ -119,5 +127,11 @@
     margin-top: 30px;
     flex-direction: column;
     align-items: center;
+  }
+
+  .card1,
+  .card2,
+  .card3 {
+    width: 100%;
   }
 }

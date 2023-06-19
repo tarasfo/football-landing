@@ -21,12 +21,12 @@ export default function Home({
   download,
   productSectionKeys,
   aboutSectionKeys,
-  featuresSectionKeys,
-  reviewsSectionKeys,
   pricingSectionKeys,
   faqSectionKeys,
   connectSectionKeys,
-  footerSectionKeys
+  footerSectionKeys,
+  data,
+  calendly,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
@@ -44,29 +44,34 @@ export default function Home({
           height: "100%",
         }}
       >
-        <Header download={download} header={header} />
+        <Header download={download} header={header} calendly={calendly} />
         <ProductSection productSectionKeys={productSectionKeys} />
         <AboutSection aboutSectionKeys={aboutSectionKeys} />
-        <FeaturesSection featuresSectionKeys={featuresSectionKeys} />
-        <ReviewsSection reviewsSectionKeys={reviewsSectionKeys} />
-        <PricingSection  pricingSectionKeys={pricingSectionKeys}/>
-        <FAQSection faqSectionKeys={faqSectionKeys}/>
-        <ConnectSection connectSectionKeys={connectSectionKeys}/>
+        <PricingSection pricingSectionKeys={pricingSectionKeys} />
+        <FAQSection faqSectionKeys={faqSectionKeys} data={data} />
+        <ConnectSection connectSectionKeys={connectSectionKeys} />
         <Footer footerSectionKeys={footerSectionKeys} />
       </main>
     </>
   );
 }
 
+import fs from "fs";
+import path from "path";
+import { log } from "console";
+
 export const getStaticProps = async () => {
+  const filePath = path.join(process.cwd(), "landing.config.json");
+  const jsonData = fs.readFileSync(filePath, "utf8");
+  const CONFIG = JSON.parse(jsonData);
+
   const product = createStaticTerm<Keys, Locales>("product", dictionary);
   const features = createStaticTerm<Keys, Locales>("features", dictionary);
-  const reviews = createStaticTerm<Keys, Locales>("reviews", dictionary);
   const pricing = createStaticTerm<Keys, Locales>("pricing", dictionary);
   const faq = createStaticTerm<Keys, Locales>("FAQ", dictionary);
   const download = createStaticTerm<Keys, Locales>("download", dictionary);
 
-  const header = [product, features, reviews, pricing, faq];
+  const header = [product, features, pricing, faq];
 
   // product section
 
@@ -86,28 +91,69 @@ export const getStaticProps = async () => {
     trial,
     noCredit,
     download,
+    calendly: CONFIG.calendly,
   };
 
   // about section
 
   const inside = createStaticTerm<Keys, Locales>("inside", dictionary);
-  const aboutTitle = createStaticTerm<Keys, Locales>("about-title", dictionary);
-  const aboutDescription = createStaticTerm<Keys, Locales>(
-    "about-description",
+  const connectTitle = createStaticTerm<Keys, Locales>(
+    "connect-title",
     dictionary
   );
-  const layout = createStaticTerm<Keys, Locales>("layout", dictionary);
-  const layoutDescription = createStaticTerm<Keys, Locales>(
-    "layout-description",
+  const connectDescription = createStaticTerm<Keys, Locales>(
+    "connect-description",
+    dictionary
+  );
+  const manageTitle = createStaticTerm<Keys, Locales>(
+    "manage-title",
+    dictionary
+  );
+  const manageDescription = createStaticTerm<Keys, Locales>(
+    "manage-description",
+    dictionary
+  );
+  const showTitle = createStaticTerm<Keys, Locales>("show-title", dictionary);
+  const showDescription = createStaticTerm<Keys, Locales>(
+    "show-description",
+    dictionary
+  );
+  const eventsTitle = createStaticTerm<Keys, Locales>(
+    "events-title",
+    dictionary
+  );
+  const eventDescription = createStaticTerm<Keys, Locales>(
+    "events-description",
+    dictionary
+  );
+  const agreeTitle = createStaticTerm<Keys, Locales>("agree-title", dictionary);
+  const agreeDescription = createStaticTerm<Keys, Locales>(
+    "agree-description",
+    dictionary
+  );
+  const footballTitle = createStaticTerm<Keys, Locales>(
+    "football-title",
+    dictionary
+  );
+  const footballDescription = createStaticTerm<Keys, Locales>(
+    "football-description",
     dictionary
   );
 
   const aboutSectionKeys = {
     inside,
-    aboutTitle,
-    aboutDescription,
-    layout,
-    layoutDescription,
+    connectTitle,
+    connectDescription,
+    manageTitle,
+    manageDescription,
+    showTitle,
+    showDescription,
+    eventsTitle,
+    eventDescription,
+    agreeTitle,
+    agreeDescription,
+    footballTitle,
+    footballDescription,
   };
 
   // features section
@@ -234,7 +280,8 @@ export const getStaticProps = async () => {
     pricingPremium,
     subscribe,
     refund,
-    download
+    download,
+    calendly: CONFIG.calendly,
   };
 
   // FAQ section
@@ -285,13 +332,17 @@ export const getStaticProps = async () => {
   // contact section
 
   const startTrial = createStaticTerm<Keys, Locales>("start-trial", dictionary);
-  const contactTitle = createStaticTerm<Keys, Locales>("contact-title", dictionary);
+  const contactTitle = createStaticTerm<Keys, Locales>(
+    "contact-title",
+    dictionary
+  );
   const email = createStaticTerm<Keys, Locales>("email", dictionary);
 
   const contactSectionKeys = {
     startTrial,
     contactTitle,
     email,
+    calendly: CONFIG.calendly,
   };
 
   // footer section
@@ -312,6 +363,7 @@ export const getStaticProps = async () => {
     props: {
       header: header,
       download: download,
+      calendly: CONFIG.calendly,
       productSectionKeys: productSectionKeys,
       aboutSectionKeys: aboutSectionKeys,
       featuresSectionKeys: featuresSectionKeys,
@@ -319,7 +371,8 @@ export const getStaticProps = async () => {
       pricingSectionKeys: pricingSectionKeys,
       faqSectionKeys: faqSectionKeys,
       connectSectionKeys: contactSectionKeys,
-      footerSectionKeys:footerSectionKeys
+      footerSectionKeys: footerSectionKeys,
+      data: CONFIG.faq,
     },
   };
 };

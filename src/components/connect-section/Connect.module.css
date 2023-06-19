@@ -18,6 +18,17 @@
   transition: 500ms;
 }
 
+.downloadButton {
+  background-color: #21bf73;
+  border: 2px solid #21bf73;
+  color: white;
+  border-radius: 5px;
+  padding: 10px 100px 10px 100px;
+  margin-top: 40px;
+  cursor: pointer;
+  font-size: 28px;
+}
+
 .container {
   margin-bottom: 50px;
   width: 100%;
@@ -80,7 +91,7 @@
   }
 }
 
-@media (min-width:768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   .innerContainer {
     width: 90%;
   }

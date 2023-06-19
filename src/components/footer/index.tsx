@@ -36,7 +36,7 @@ function Footer({ footerSectionKeys }: { footerSectionKeys: any }) {
       }}
     >
       <Box component={"footer"} className={styles.footerContainer}>
-        <Typography className={styles.logo}>C O N N E C T.</Typography>
+        <Typography className={styles.logo}>DIGITALIZE</Typography>
         <Box
           className={
             g11nLocale === "en"
@@ -44,9 +44,6 @@ function Footer({ footerSectionKeys }: { footerSectionKeys: any }) {
               : styles.textContainerUA
           }
         >
-          <Typography style={{ textAlign: "center" }}>
-            {footerSectionKeys.about[g11nLocale]}
-          </Typography>
           <Typography style={{ textAlign: "center" }}>
             <Link
               style={{ textDecoration: "none", color: "inherit" }}
@@ -64,73 +61,13 @@ function Footer({ footerSectionKeys }: { footerSectionKeys: any }) {
             </Link>
           </Typography>
           <Typography style={{ textAlign: "center" }}>
-            {footerSectionKeys.contact[g11nLocale]}
-          </Typography>
-        </Box>
-        <Box className={styles.iconContainer}>
-          {matches ? (
-            <>
-              <FaInstagram size={"24px"} color="#21bf73" />
-              <RxTwitterLogo size={"24px"} color="#21bf73" />
-              <AiOutlineLinkedin size={"24px"} color="#21bf73" />
-              <FaTwitch size={"24px"} color="#21bf73" />
-              <Link className={styles.link} href="/" locale="en">
-                en
-              </Link>
-              <Link className={styles.link} href="/" locale="ua">
-                ua
-              </Link>
-            </>
-          ) : (
-            <div
-              style={{
-                display: "flex",
-                gap: "20px",
-                alignItems: "center",
-                paddingBottom: "20px",
-              }}
+            <Link
+              style={{ textDecoration: "none", color: "inherit" }}
+              href="/contacts"
             >
-              <FaInstagram size={"24px"} color="#21bf73" />
-              <RxTwitterLogo size={"24px"} color="#21bf73" />
-              <AiOutlineLinkedin size={"24px"} color="#21bf73" />
-              <FaTwitch size={"24px"} color="#21bf73" />
-              <IconButton
-                style={{ padding: 0 }}
-                aria-controls={open ? "basic-menu" : undefined}
-                aria-haspopup="true"
-                aria-expanded={open ? "true" : undefined}
-                onClick={handleClick}
-              >
-                <IoLanguageOutline />
-              </IconButton>
-              <Menu
-                id="basic-menu"
-                anchorEl={anchorEl}
-                open={open}
-                onClose={handleClose}
-                style={{
-                  padding: "20px",
-                }}
-              >
-                <Link
-                  onClick={handleClose}
-                  className={styles.link}
-                  href="/"
-                  locale="en"
-                >
-                  en
-                </Link>
-                <Link
-                  onClick={handleClose}
-                  className={styles.link}
-                  href="/"
-                  locale="ua"
-                >
-                  ua
-                </Link>
-              </Menu>
-            </div>
-          )}
+              {footerSectionKeys.contact[g11nLocale]}
+            </Link>
+          </Typography>
         </Box>
       </Box>
     </Box>

@@ -20,76 +20,117 @@ function PricingSection({ pricingSectionKeys }: { pricingSectionKeys: any }) {
     <Box id="Pricing" className={style.pricingSection}>
       <Box className={style.pricingSectionHeader}>
         <Typography variant="h2" className={style.pricingSectionTitle}>
-         {pricingSectionKeys.pricingTitle[g11nLocale]}
+          Підписки
         </Typography>
-        <p className={style.pricingSectionDescription}>
-        {pricingSectionKeys.pricingDescription[g11nLocale]}
-        </p>
       </Box>
       <Box className={style.pricingSectionCards}>
         <Card className={style.pricingCard}>
           <CardContent>
-            <Typography className={style.cardTitle}>{pricingSectionKeys.pricingBasic[g11nLocale]}</Typography>
-            <Typography
-              className={style.cardSubtitle}
-              variant="h5"
-              component="div"
-            >
-              {pricingSectionKeys.pricingBasicDescription[g11nLocale]}
-            </Typography>
-            <Image src="/f1.png" width={120} height={120} alt="icon" />
+            <Typography className={style.cardTitle}>Благодійна</Typography>
+
+            <Image src="/solidarity.png" width={120} height={120} alt="icon" />
             <Typography className={style.cardPriseDetails} gutterBottom>
               {pricingSectionKeys.free[g11nLocale]}
             </Typography>
+            <Typography className={style.cardSubtitle}>
+              для дитячих команд
+            </Typography>
             <Typography
-              className={style.cardPricingPeriod}
-              variant="h5"
-              component="div"
+              style={{
+                textAlign: "left",
+                marginTop: "10px",
+                fontSize: "12px",
+                width: "100%",
+              }}
             >
-              {pricingSectionKeys.pricingBasicPeriod[g11nLocale]}
+              - підтримка по email
             </Typography>
           </CardContent>
-          <CardActions>
+          <CardActions style={{ width: "100%", padding: "0px" }}>
             <Button className={style.cardBasicButton} size="small">
-              {pricingSectionKeys.download[g11nLocale]}
+              <a
+                style={{ textDecoration: "none", color: "white" }}
+                href={pricingSectionKeys.calendly}
+              >
+                {pricingSectionKeys.download[g11nLocale]}
+              </a>
             </Button>
           </CardActions>
         </Card>
 
         <Card className={style.pricingCard}>
           <CardContent>
-            <Typography className={style.cardTitle} gutterBottom>
-              {pricingSectionKeys.pricingPremiumTitle[g11nLocale]}
-            </Typography>
-            <Typography
-              className={style.cardSubtitle}
-              variant="h5"
-              component="div"
-            >
-              {pricingSectionKeys.pricingPremiumDescription[g11nLocale]}
-            </Typography>
-            <Image src="/f3.png" width={120} height={120} alt="icon" />
+            <Typography className={style.cardTitle}>Стандартна</Typography>
+
+            <Image src="/standard.png" width={120} height={120} alt="icon" />
             <Typography className={style.cardPriseDetails} gutterBottom>
-              {pricingSectionKeys.pricingPremium[g11nLocale]}
+              400$/міс
             </Typography>
+
             <Typography
-              className={style.cardPricingPeriod}
-              variant="h5"
-              component="div"
+              style={{
+                textAlign: "left",
+                marginTop: "25px",
+                fontSize: "12px",
+                width: "100%",
+              }}
             >
-              {pricingSectionKeys.pricingPremiumPeriod[g11nLocale]}
+              - підтримка по email протягом 48 годин
             </Typography>
           </CardContent>
-          <CardActions>
-            <Button className={style.cardPremiumButton} size="small">
-              {pricingSectionKeys.subscribe[g11nLocale]}
+          <CardActions style={{ width: "100%", padding: "0px" }}>
+            <Button className={style.cardBasicButton} size="small">
+              <a
+                style={{ textDecoration: "none", color: "white" }}
+                href={pricingSectionKeys.calendly}
+              >
+                {pricingSectionKeys.download[g11nLocale]}
+              </a>
+            </Button>
+          </CardActions>
+        </Card>
+
+        <Card className={style.pricingCard}>
+          <CardContent>
+            <Typography className={style.cardTitle}>Преміум</Typography>
+            <Image src="/premium.png" width={120} height={120} alt="icon" />
+            <Typography className={style.cardPriseDetails} gutterBottom>
+              800$/міс
+            </Typography>
+            <Typography
+              style={{
+                textAlign: "left",
+                marginTop: "25px",
+                fontSize: "12px",
+                width: "100%",
+              }}
+            >
+              - можливість додати функціонал саме під ваші потреби
+            </Typography>
+
+            <Typography
+              style={{
+                textAlign: "left",
+
+                fontSize: "12px",
+                width: "100%",
+              }}
+            >
+              - швидка підтримка в чаті/телефоном
+            </Typography>
+          </CardContent>
+          <CardActions style={{ width: "100%", padding: "0px" }}>
+            <Button className={style.cardBasicButton} size="small">
+              <a
+                style={{ textDecoration: "none", color: "white" }}
+                href={pricingSectionKeys.calendly}
+              >
+                {pricingSectionKeys.download[g11nLocale]}
+              </a>
             </Button>
           </CardActions>
         </Card>
       </Box>
-      <p className={style.refundText}>
-        {pricingSectionKeys.refund[g11nLocale]}
-      </p>
     </Box>
   );
 }
