@@ -8,7 +8,14 @@ import FAQAccordion from "./components";
 import { useRouter } from "next/router";
 import { getLocale } from "next-g11n";
 
-function FAQSection({ faqSectionKeys }: { faqSectionKeys: any }) {
+function FAQSection({
+  faqSectionKeys,
+  data,
+}: {
+  faqSectionKeys: any;
+  data: any;
+}) {
+  console.log("FAQ", data);
   const router = useRouter();
   const g11nLocale = getLocale(router) || "en";
 
@@ -18,9 +25,6 @@ function FAQSection({ faqSectionKeys }: { faqSectionKeys: any }) {
         <h2 className={style.mainHeading}>
           {faqSectionKeys.faqTitle[g11nLocale]}
         </h2>
-        <p className={style.subHeading}>
-          {faqSectionKeys.faqDescription[g11nLocale]}
-        </p>
         <div className={style.additionalInfo}>
           {faqSectionKeys.questions[g11nLocale]}
         </div>
@@ -29,22 +33,15 @@ function FAQSection({ faqSectionKeys }: { faqSectionKeys: any }) {
         </a>
       </Box>
       <Box className={style.accordionGrid}>
-        <FAQAccordion
-          title={faqSectionKeys.faqQuestion1[g11nLocale]}
-          description={faqSectionKeys.faqAnswer1[g11nLocale]}
-        />
-        <FAQAccordion
-          title={faqSectionKeys.faqQuestion2[g11nLocale]}
-          description={faqSectionKeys.faqAnswer2[g11nLocale]}
-        />
-        <FAQAccordion
-          title={faqSectionKeys.faqQuestion3[g11nLocale]}
-          description={faqSectionKeys.faqAnswer3[g11nLocale]}
-        />
-        <FAQAccordion
-          title={faqSectionKeys.faqQuestion4[g11nLocale]}
-          description={faqSectionKeys.faqAnswer4[g11nLocale]}
-        />
+        {data.map((item: any, index: number) => {
+          return (
+            <FAQAccordion
+              key={index}
+              title={item.question}
+              description={item.answer}
+            />
+          );
+        })}
       </Box>
     </Box>
   );

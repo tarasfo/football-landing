@@ -17,7 +17,15 @@ import { useRouter } from "next/router";
 import { getLocale } from "next-g11n";
 import { FiMoreVertical } from "react-icons/fi";
 
-function Header({ header, download }: { header: any; download: any }) {
+function Header({
+  header,
+  download,
+  calendly,
+}: {
+  header: any;
+  download: any;
+  calendly: any;
+}) {
   const router = useRouter();
   const g11nLocale = getLocale(router) || "en";
   const matches = useMediaQuery("(min-width:600px)");
@@ -33,21 +41,21 @@ function Header({ header, download }: { header: any; download: any }) {
   return (
     <AppBar component="nav" position="fixed" className={styles.appBar}>
       <Toolbar className={styles.toolbar}>
-        <Typography className={styles.title}>Connect.</Typography>
+        <Typography className={styles.title}>Digitalize</Typography>
         {matches ? (
           <Box className={styles.buttons}>
             {header.map((item: any) => (
               <Button
-                onClick={() => router.push(`#${item["en"]}`)} // take id of section from dictionary
+                onClick={() => router.push(`/#${item["en"]}`)} // take id of section from dictionary
                 className={styles.button}
                 key={item[g11nLocale]}
               >
                 {item[g11nLocale]}
               </Button>
             ))}
-            <button className={styles.downloadButton}>
+            <a href={calendly} className={styles.downloadButton}>
               {download[g11nLocale]}
-            </button>
+            </a>
           </Box>
         ) : (
           <div>
@@ -79,17 +87,18 @@ function Header({ header, download }: { header: any; download: any }) {
                   {item[g11nLocale]}
                 </MenuItem>
               ))}
-              <button
+              <a
                 style={{
                   margin: "10px",
                   backgroundColor: "#21bf73",
                   border: "none",
                   color: "white",
                 }}
+                href={calendly}
                 className={styles.downloadButton}
               >
                 {download[g11nLocale]}
-              </button>
+              </a>
             </Menu>
           </div>
         )}
