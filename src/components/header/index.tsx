@@ -46,7 +46,7 @@ function Header({
           <Box className={styles.buttons}>
             {header.map((item: any) => (
               <Button
-                onClick={() => router.push(`#${item["en"]}`)} // take id of section from dictionary
+                onClick={() => router.push(`/#${item["en"]}`)} // take id of section from dictionary
                 className={styles.button}
                 key={item[g11nLocale]}
               >

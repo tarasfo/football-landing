@@ -19,15 +19,16 @@ import { GoogleMap, Marker } from "react-google-maps";
 import styles from "./Contact.module.css";
 
 export default function Privacy({
+  footerSectionKeys,
   header,
   download,
-  footerSectionKeys,
   calendly,
+  contacts,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
       <main className={styles.mainContainer}>
-        yarn add react-google-maps
+        <Header header={header} download={download} calendly={calendly} />
         <Box className={styles.bgColor}>
           <Box className={styles.widthHalf}>
             <Box className={styles.flexRow}>
@@ -50,7 +51,7 @@ export default function Privacy({
               <AiOutlinePhone className={styles.iconStyle} color="#21BF73" />
               <Typography className={styles.typographyMedium}>Phone</Typography>
             </Box>
-            <Typography>+38 093 888 888</Typography>
+            <Typography>{contacts.phone}</Typography>
 
             <Box className={styles.flexRowCenter}>
               <BsTelegram className={styles.iconStyle} color="#21BF73" />
@@ -58,7 +59,7 @@ export default function Privacy({
                 Telegram
               </Typography>
             </Box>
-            <Typography>@test</Typography>
+            <Typography>{contacts.telegram}</Typography>
 
             <Box className={styles.flexRowCenter}>
               <AiOutlineMail
@@ -68,10 +69,7 @@ export default function Privacy({
               />
               <Typography className={styles.typographyMedium}>Email</Typography>
             </Box>
-            <a
-              className={styles.emailButton}
-              href="mailto:rudenko.albert.n@gmail.com"
-            >
+            <a className={styles.emailButton} href={`mailto:${contacts.email}`}>
               Написати
             </a>
 
@@ -82,25 +80,14 @@ export default function Privacy({
               </Typography>
             </Box>
             <Button className={styles.calendlyButton}>
-              Запланувати дзвінок
+              <a
+                style={{ textDecoration: "none", color: "white" }}
+                href={`${contacts.calendly}`}
+              >
+                Запланувати дзвінок
+              </a>
             </Button>
           </Box>
-        </Box>
-        <Box className={styles.whiteBg}>
-          <Typography
-            style={{
-              fontFamily: "Montserrat",
-              fontStyle: "normal",
-              fontWeight: 400,
-              fontSize: "32px",
-              lineHeight: "39px",
-              color: "#000000",
-            }}
-          >
-            Де ми знаходимось?
-          </Typography>
-
-         
         </Box>
         <Footer footerSectionKeys={footerSectionKeys} />
       </main>
@@ -144,6 +131,7 @@ export const getStaticProps = async () => {
       download: download,
       calendly: CONFIG.calendly,
       footerSectionKeys: footerSectionKeys,
+      contacts: CONFIG.contacts,
     },
   };
 };

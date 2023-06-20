@@ -23,6 +23,6 @@
         "email": "test",
         "address": "test",
         "telegram": "test",
-        "calendly": "test"
+        "calendly": "https://docs.nestjs.com/"
     }
 }
