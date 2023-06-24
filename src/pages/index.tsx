@@ -31,7 +31,7 @@ export default function Home({
   return (
     <>
       <Head>
-        <title>Connect.</title>
+        <title>Digitalize</title>
         <meta name="description" content="Lending page for football app" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />

@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Footer from "@/components/footer";
 import header from "@/components/header";
 import Header from "@/components/header";
@@ -27,6 +28,12 @@ export default function Privacy({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
+      <Head>
+        <title>Digitalize</title>
+        <meta name="description" content="Lending page for football app" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <main className={styles.mainContainer}>
         <Header header={header} download={download} calendly={calendly} />
         <Box className={styles.bgColor}>
@@ -49,17 +56,13 @@ export default function Privacy({
           <Box className={styles.flexColumn}>
             <Box className={styles.flexRowCenter}>
               <AiOutlinePhone className={styles.iconStyle} color="#21BF73" />
-              <Typography className={styles.typographyMedium}>Phone</Typography>
-            </Box>
-            <Typography>{contacts.phone}</Typography>
-
-            <Box className={styles.flexRowCenter}>
-              <BsTelegram className={styles.iconStyle} color="#21BF73" />
               <Typography className={styles.typographyMedium}>
-                Telegram
+                Телефон
               </Typography>
             </Box>
-            <Typography>{contacts.telegram}</Typography>
+            <Typography>
+              <a href={`tel:${contacts.phone}`}>{contacts.phone}</a>
+            </Typography>
 
             <Box className={styles.flexRowCenter}>
               <AiOutlineMail
@@ -67,7 +70,7 @@ export default function Privacy({
                 width={30}
                 color="#21BF73"
               />
-              <Typography className={styles.typographyMedium}>Email</Typography>
+              <Typography className={styles.typographyMedium}>Пошта</Typography>
             </Box>
             <a className={styles.emailButton} href={`mailto:${contacts.email}`}>
               Написати
@@ -83,6 +86,7 @@ export default function Privacy({
               <a
                 style={{ textDecoration: "none", color: "white" }}
                 href={`${contacts.calendly}`}
+                target="_blank"
               >
                 Запланувати дзвінок
               </a>
