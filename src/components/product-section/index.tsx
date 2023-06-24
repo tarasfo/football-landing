@@ -30,7 +30,7 @@ function ProductSection({ productSectionKeys }: { productSectionKeys: any }) {
                   color="black"
                 />
                 <Box>
-                  <h6 className={styles.downloadButtonText}>Dowload on the</h6>
+                  <h6 className={styles.downloadButtonText}>Download on the</h6>
                   <h4 className={styles.downloadButtonTextBig}>App Store</h4>
                 </Box>
               </Box>
