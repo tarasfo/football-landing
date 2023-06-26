@@ -1,30 +1,15 @@
-import { Box, IconButton, Menu, useMediaQuery } from "@material-ui/core";
+import { Box, useMediaQuery } from "@material-ui/core";
 import { Typography } from "@mui/material";
 import React from "react";
-import { FaInstagram, FaTwitch } from "react-icons/fa";
-import { RxTwitterLogo } from "react-icons/rx";
-import { AiOutlineLinkedin } from "react-icons/ai";
+import { getLocale } from "next-g11n";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import styles from "./Footer.module.css";
 
-import { IoLanguageOutline } from "react-icons/io5";
-import { FiMoreVertical } from "react-icons/fi";
-import { getLocale } from "next-g11n";
+import styles from "./Footer.module.css";
 
 function Footer({ footerSectionKeys }: { footerSectionKeys: any }) {
   const router = useRouter();
   const g11nLocale = getLocale(router) || "en";
-
-  const matches = useMediaQuery("(min-width:600px)");
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
 
   return (
     <Box

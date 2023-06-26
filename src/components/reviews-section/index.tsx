@@ -115,7 +115,6 @@ function ReviewsSection({ reviewsSectionKeys }: { reviewsSectionKeys: any }) {
         </div>
         <div className={styles.carouselContainer}>
           <Carousel
-            //autoPlay={true}
             infiniteLoop={true}
             showStatus={false}
             showThumbs={false}

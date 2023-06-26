@@ -1,20 +1,15 @@
 import Head from "next/head";
-import Image from "next/image";
-import { Inter } from "next/font/google";
-import Header from "@/components/header";
-import { Box } from "@material-ui/core";
-import Footer from "@/components/footer";
 import { createStaticTerm, getLocale } from "next-g11n";
-import { useRouter } from "next/router";
 import { dictionary, Keys, Locales } from "../dictionary";
 import { InferGetStaticPropsType } from "next";
+
 import ProductSection from "@/components/product-section";
 import AboutSection from "@/components/about-section";
-import FeaturesSection from "@/components/features-section";
-import ReviewsSection from "@/components/reviews-section";
 import PricingSection from "@/components/pricing-section";
 import FAQSection from "@/components/faq-section";
 import ConnectSection from "@/components/connect-section";
+import Header from "@/components/header";
+import Footer from "@/components/footer";
 
 export default function Home({
   header,
@@ -58,7 +53,6 @@ export default function Home({
 
 import fs from "fs";
 import path from "path";
-import { log } from "console";
 
 export const getStaticProps = async () => {
   const filePath = path.join(process.cwd(), "landing.config.json");
@@ -91,7 +85,10 @@ export const getStaticProps = async () => {
     trial,
     noCredit,
     download,
-    calendly: CONFIG.calendly,
+    links:{
+      appStore: CONFIG.appStore,
+      googlePlay: CONFIG.googlePlay,
+    }
   };
 
   // about section

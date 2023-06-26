@@ -41,7 +41,7 @@ function Header({
   return (
     <AppBar component="nav" position="fixed" className={styles.appBar}>
       <Toolbar className={styles.toolbar}>
-        <Typography className={styles.title}>Digitalize</Typography>
+        <Typography className={styles.title}>DIGITALIZE</Typography>
         {matches ? (
           <Box className={styles.buttons}>
             {header.map((item: any) => (
@@ -72,14 +72,14 @@ function Header({
               anchorEl={anchorEl}
               open={open}
               onClose={handleClose}
-              style={{
-                padding: "20px",
+              PopoverClasses={{
+                paper: styles.popover,
               }}
             >
               {header.map((item: any) => (
                 <MenuItem
                   onClick={() => {
-                    router.push(`#${item["en"]}`), handleClose();
+                    router.push(`/#${item["en"]}`), handleClose();
                   }} // take id of section from dictionary
                   className={styles.button}
                   key={item[g11nLocale]}
@@ -87,18 +87,19 @@ function Header({
                   {item[g11nLocale]}
                 </MenuItem>
               ))}
-              <a
-                style={{
-                  margin: "10px",
-                  backgroundColor: "#21bf73",
-                  border: "none",
-                  color: "white",
-                }}
-                href={calendly}
-                className={styles.downloadButton}
-              >
-                {download[g11nLocale]}
-              </a>
+              <MenuItem>
+                <a
+                  style={{
+                    backgroundColor: "#21bf73",
+                    border: "none",
+                    color: "white",
+                  }}
+                  href={calendly}
+                  className={styles.downloadButton}
+                >
+                  {download[g11nLocale]}
+                </a>
+              </MenuItem>
             </Menu>
           </div>
         )}

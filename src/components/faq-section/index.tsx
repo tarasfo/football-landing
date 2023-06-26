@@ -2,8 +2,6 @@ import { Box } from "@material-ui/core";
 import React from "react";
 
 import style from "./FAQ.module.css";
-
-import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import FAQAccordion from "./components";
 import { useRouter } from "next/router";
 import { getLocale } from "next-g11n";
@@ -15,7 +13,6 @@ function FAQSection({
   faqSectionKeys: any;
   data: any;
 }) {
-  console.log("FAQ", data);
   const router = useRouter();
   const g11nLocale = getLocale(router) || "en";
 
