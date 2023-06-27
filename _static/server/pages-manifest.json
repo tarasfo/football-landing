@@ -1,11 +1,12 @@
 {
-  "/_document": "pages/_document.js",
   "/_app": "pages/_app.js",
+  "/_document": "pages/_document.js",
   "/_error": "pages/_error.js",
-  "/contacts": "pages/contacts.js",
-  "/": "pages/index.js",
-  "/[locale]/contacts": "pages/[locale]/contacts.js",
-  "/[locale]/privacy": "pages/[locale]/privacy.js",
-  "/[locale]/terms": "pages/[locale]/terms.js",
-  "/[locale]": "pages/[locale].js"
+  "/contacts": "pages/contacts.html",
+  "/": "pages/index.html",
+  "/[locale]/contacts": "pages/[locale]/contacts.html",
+  "/[locale]": "pages/[locale].js",
+  "/[locale]/terms": "pages/[locale]/terms.html",
+  "/[locale]/privacy": "pages/[locale]/privacy.html",
+  "/404": "pages/404.html"
 }
