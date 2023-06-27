@@ -21,7 +21,7 @@ function ConnectSection({ connectSectionKeys }: { connectSectionKeys: any }) {
           style={{ color: "white", textDecoration: "none" }}
           href={connectSectionKeys.calendly}
         >
-          Зв'язатись
+          {"Зв'язатись"}
         </a>
       </button>
     </Box>
