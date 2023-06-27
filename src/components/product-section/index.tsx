@@ -5,8 +5,6 @@ import React from "react";
 import styles from "./Product.module.css";
 import { useRouter } from "next/router";
 import { getLocale } from "next-g11n";
-import { AiFillApple } from "react-icons/ai";
-import { BsGooglePlay } from "react-icons/bs";
 
 function ProductSection({ productSectionKeys }: { productSectionKeys: any }) {
   const router = useRouter();
@@ -22,31 +20,29 @@ function ProductSection({ productSectionKeys }: { productSectionKeys: any }) {
             {productSectionKeys.seeMore[g11nLocale]}
           </Link>
           <Box className={styles.downloadLinkContainer}>
-            <Link className={styles.downloadButtonLink} href="">
-              <Box className={styles.downloadButton}>
-                <AiFillApple
-                  className={styles.downloadButtonIcon}
-                  size={"36px"}
-                  color="black"
-                />
-                <Box>
-                  <h6 className={styles.downloadButtonText}>Download on the</h6>
-                  <h4 className={styles.downloadButtonTextBig}>App Store</h4>
-                </Box>
-              </Box>
+            <Link
+              className={styles.downloadButtonLink}
+              href={productSectionKeys.links.appStore}
+            >
+              <Image
+                className={styles.downloadApple}
+                alt=""
+                src="/apple_store.svg"
+                width={130}
+                height={50}
+              />
             </Link>
-            <Link className={styles.downloadButtonLink} href="">
-              <Box className={styles.downloadButton}>
-                <BsGooglePlay
-                  className={styles.downloadButtonIcon}
-                  size={"36px"}
-                  color="black"
-                />
-                <Box>
-                  <h6 className={styles.downloadButtonText}>GET IT ON</h6>
-                  <h4 className={styles.downloadButtonTextBig}>Google Play</h4>
-                </Box>
-              </Box>
+            <Link
+              className={styles.downloadButtonLink}
+              href={productSectionKeys.links.googlePlay}
+            >
+              <Image
+                className={styles.downloadGoogle}
+                alt=""
+                src="/Google_Play_Store_badge_EN.svg"
+                width={150}
+                height={50}
+              />
             </Link>
           </Box>
         </Box>
@@ -54,9 +50,9 @@ function ProductSection({ productSectionKeys }: { productSectionKeys: any }) {
       <Image
         className={styles.productImage}
         alt=""
-        src="/iphone.png"
-        width={270}
-        height={520}
+        src="/iphone_svg.svg"
+        width={280}
+        height={600}
         priority={true}
       />
     </Box>

@@ -1,9 +1,15 @@
 import Head from "next/head";
-import Image from "next/image";
-import { Inter } from "next/font/google";
-import styles from "@/styles/Home.module.css";
+import { createStaticTerm } from "next-g11n";
+import { InferGetStaticPropsType } from "next";
 
-export default function Privacy() {
+import { Keys, Locales, dictionary } from "@/dictionary";
+import Header from "@/components/header";
+
+export default function Privacy({
+  header,
+  download,
+  calendly,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
       <Head>
@@ -20,6 +26,7 @@ export default function Privacy() {
           flexDirection: "column",
         }}
       >
+        <Header download={download} header={header} calendly={calendly} />
         <h2>
           <b>PRIVACY POLICY</b>
         </h2>
@@ -655,3 +662,28 @@ export default function Privacy() {
     </>
   );
 }
+
+import fs from "fs";
+import path from "path";
+
+export const getStaticProps = async () => {
+  const filePath = path.join(process.cwd(), "landing.config.json");
+  const jsonData = fs.readFileSync(filePath, "utf8");
+  const CONFIG = JSON.parse(jsonData);
+
+  const product = createStaticTerm<Keys, Locales>("product", dictionary);
+  const features = createStaticTerm<Keys, Locales>("features", dictionary);
+  const pricing = createStaticTerm<Keys, Locales>("pricing", dictionary);
+  const faq = createStaticTerm<Keys, Locales>("FAQ", dictionary);
+  const download = createStaticTerm<Keys, Locales>("download", dictionary);
+
+  const header = [product, features, pricing, faq];
+
+  return {
+    props: {
+      header: header,
+      download: download,
+      calendly: CONFIG.calendly,
+    },
+  };
+};

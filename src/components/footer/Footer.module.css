@@ -78,12 +78,10 @@
   }
 
   .textContainerUA {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    align-items: center;
-    width: 100%;
-    margin: 10px 0px 0px 0px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
   }
 
   .iconContainer {

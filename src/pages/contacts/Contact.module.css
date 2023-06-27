@@ -65,13 +65,13 @@
 }
 
 .iconStyle {
-  width: 20px;
-  height: 20px;
+  width: 40px;
+  height: 40px;
 }
 
 .typographyMedium {
   font-family: "Montserrat";
-  font-size: 24px;
+  font-size: 32px !important;
 }
 
 .emailButton,
@@ -82,7 +82,7 @@
   border-radius: 5px !important;
   padding: 10px 20px 10px 20px !important;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 20px !important;
   text-transform: none !important;
   text-decoration: none !important;
 }
