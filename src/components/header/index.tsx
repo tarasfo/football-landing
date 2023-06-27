@@ -1,6 +1,5 @@
 import {
   AppBar,
-  Container,
   Toolbar,
   Typography,
   Box,
@@ -14,20 +13,12 @@ import styles from "./Header.module.css";
 
 import React from "react";
 import { useRouter } from "next/router";
-import { getLocale } from "next-g11n";
 import { FiMoreVertical } from "react-icons/fi";
+import { useTranslation } from "next-i18next";
+import { getStaticPaths, makeStaticProps } from "@/lib/getStatic";
 
-function Header({
-  header,
-  download,
-  calendly,
-}: {
-  header: any;
-  download: any;
-  calendly: any;
-}) {
+function Header() {
   const router = useRouter();
-  const g11nLocale = getLocale(router) || "en";
   const matches = useMediaQuery("(min-width:600px)");
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
@@ -38,23 +29,41 @@ function Header({
     setAnchorEl(null);
   };
 
+  const { t, i18n } = useTranslation("common");
+
   return (
     <AppBar component="nav" position="fixed" className={styles.appBar}>
       <Toolbar className={styles.toolbar}>
         <Typography className={styles.title}>DIGITALIZE</Typography>
         {matches ? (
           <Box className={styles.buttons}>
-            {header.map((item: any) => (
-              <Button
-                onClick={() => router.push(`/#${item["en"]}`)} // take id of section from dictionary
-                className={styles.button}
-                key={item[g11nLocale]}
-              >
-                {item[g11nLocale]}
-              </Button>
-            ))}
-            <a href={calendly} className={styles.downloadButton}>
-              {download[g11nLocale]}
+            <Button
+              onClick={() => router.push(`/#Product`)}
+              className={styles.button}
+            >
+              {t("product")}
+            </Button>
+            <Button
+              onClick={() => router.push(`/#Product`)}
+              className={styles.button}
+            >
+              {t("features")}
+            </Button>
+            <Button
+              onClick={() => router.push(`/#Product`)}
+              className={styles.button}
+            >
+              {t("pricing")}
+            </Button>
+            <Button
+              onClick={() => router.push(`/#Product`)}
+              className={styles.button}
+            >
+              {t("FAQ")}
+            </Button>
+
+            <a href={"/contacts"} className={styles.downloadButton}>
+              {t("download")}
             </a>
           </Box>
         ) : (
@@ -76,7 +85,7 @@ function Header({
                 paper: styles.popover,
               }}
             >
-              {header.map((item: any) => (
+              {/* {header.map((item: any) => (
                 <MenuItem
                   onClick={() => {
                     router.push(`/#${item["en"]}`), handleClose();
@@ -86,7 +95,7 @@ function Header({
                 >
                   {item[g11nLocale]}
                 </MenuItem>
-              ))}
+              ))} */}
               <MenuItem>
                 <a
                   style={{
@@ -94,10 +103,10 @@ function Header({
                     border: "none",
                     color: "white",
                   }}
-                  href={calendly}
+                  href={"/contacts"}
                   className={styles.downloadButton}
                 >
-                  {download[g11nLocale]}
+                  {t("download")}
                 </a>
               </MenuItem>
             </Menu>

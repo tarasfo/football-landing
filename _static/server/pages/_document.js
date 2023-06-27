@@ -5,7 +5,7 @@ exports.id = 660;
 exports.ids = [660];
 exports.modules = {
 
-/***/ 3193:
+/***/ 193:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
@@ -19,16 +19,16 @@ __webpack_require__.d(__webpack_exports__, {
 // EXTERNAL MODULE: external "react/jsx-runtime"
 var jsx_runtime_ = __webpack_require__(997);
 // EXTERNAL MODULE: external "react"
-var external_react_ = __webpack_require__(6689);
+var external_react_ = __webpack_require__(689);
 // EXTERNAL MODULE: ./node_modules/next/document.js
-var next_document = __webpack_require__(6859);
+var next_document = __webpack_require__(859);
 ;// CONCATENATED MODULE: external "@emotion/server/create-instance"
 const create_instance_namespaceObject = require("@emotion/server/create-instance");
 var create_instance_default = /*#__PURE__*/__webpack_require__.n(create_instance_namespaceObject);
 // EXTERNAL MODULE: ./src/theme.ts
-var theme = __webpack_require__(1324);
+var theme = __webpack_require__(324);
 // EXTERNAL MODULE: ./src/createEmotionCache.ts
-var createEmotionCache = __webpack_require__(8896);
+var createEmotionCache = __webpack_require__(896);
 ;// CONCATENATED MODULE: ./src/pages/_document.tsx
 
 
@@ -38,7 +38,6 @@ var createEmotionCache = __webpack_require__(8896);
 
 function MyDocument({ emotionStyleTags  }) {
     return /*#__PURE__*/ (0,jsx_runtime_.jsxs)(next_document.Html, {
-        lang: "en",
         children: [
             /*#__PURE__*/ (0,jsx_runtime_.jsxs)(next_document.Head, {
                 children: [
@@ -127,70 +126,70 @@ MyDocument.getInitialProps = async (ctx)=>{
 
 /***/ }),
 
-/***/ 1913:
+/***/ 913:
 /***/ ((module) => {
 
 module.exports = require("@emotion/cache");
 
 /***/ }),
 
-/***/ 5223:
+/***/ 223:
 /***/ ((module) => {
 
 module.exports = require("@material-ui/core/colors");
 
 /***/ }),
 
-/***/ 8308:
+/***/ 308:
 /***/ ((module) => {
 
 module.exports = require("@material-ui/core/styles");
 
 /***/ }),
 
-/***/ 4140:
+/***/ 140:
 /***/ ((module) => {
 
 module.exports = require("next/dist/server/get-page-files.js");
 
 /***/ }),
 
-/***/ 9716:
+/***/ 716:
 /***/ ((module) => {
 
 module.exports = require("next/dist/server/htmlescape.js");
 
 /***/ }),
 
-/***/ 6368:
+/***/ 368:
 /***/ ((module) => {
 
 module.exports = require("next/dist/server/utils.js");
 
 /***/ }),
 
-/***/ 6724:
+/***/ 724:
 /***/ ((module) => {
 
 module.exports = require("next/dist/shared/lib/constants.js");
 
 /***/ }),
 
-/***/ 8743:
+/***/ 743:
 /***/ ((module) => {
 
 module.exports = require("next/dist/shared/lib/html-context.js");
 
 /***/ }),
 
-/***/ 8524:
+/***/ 524:
 /***/ ((module) => {
 
 module.exports = require("next/dist/shared/lib/is-plain-object.js");
 
 /***/ }),
 
-/***/ 6689:
+/***/ 689:
 /***/ ((module) => {
 
 module.exports = require("react");
@@ -211,7 +210,7 @@ module.exports = require("react/jsx-runtime");
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [859,273], () => (__webpack_exec__(3193)));
+var __webpack_exports__ = __webpack_require__.X(0, [859,273], () => (__webpack_exec__(193)));
 module.exports = __webpack_exports__;
 
 })();
