@@ -28,7 +28,7 @@ export default function MyDocument({ emotionStyleTags }: MyDocumentProps) {
         <link
           href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800,900%7COpen+Sans:300,400,500&display=swap"
           rel="stylesheet"
-        ></link>
+        />
         {emotionStyleTags}
       </Head>
       <body>
