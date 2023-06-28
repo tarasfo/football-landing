@@ -139,7 +139,8 @@
   }
 
   .downloadLinkContainer {
-    width: 80%;
+    width: 300px;
+    justify-content: space-between;
   }
 
   .productText {

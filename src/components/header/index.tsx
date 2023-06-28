@@ -120,17 +120,18 @@ function Header() {
                 </MenuItem>
               </Link>
               <MenuItem>
-                <a
-                  style={{
-                    backgroundColor: "#21bf73",
-                    border: "none",
-                    color: "white",
-                  }}
-                  href={"/contacts"}
-                  className={styles.downloadButton}
-                >
-                  {t("download")}
-                </a>
+                <Link href={`/contacts`} skipLocaleHandling={false}>
+                  <div
+                    style={{
+                      backgroundColor: "#21bf73",
+                      border: "none",
+                      color: "white",
+                    }}
+                    className={styles.downloadButton}
+                  >
+                    {t("download")}
+                  </div>
+                </Link>
               </MenuItem>
             </Menu>
           </div>
