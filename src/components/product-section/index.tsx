@@ -5,24 +5,23 @@ import React from "react";
 import styles from "./Product.module.css";
 import { useRouter } from "next/router";
 import { getLocale } from "next-g11n";
+import { useTranslation } from "next-i18next";
 
-function ProductSection({ productSectionKeys }: { productSectionKeys: any }) {
-  const router = useRouter();
-  const g11nLocale = getLocale(router) || "en";
+function ProductSection({ download }: { download: any }) {
+  const { t, i18n } = useTranslation("common");
+
   return (
     <Box id="Product" className={styles.productSection}>
       <Box className={styles.productContent}>
         <Box className={styles.productText}>
-          <h2 className={styles.productTitle}>
-            {productSectionKeys.launch[g11nLocale]}
-          </h2>
+          <h2 className={styles.productTitle}>{t("launch")}</h2>
           <Link className={styles.seeMoreButton} href="#Features">
-            {productSectionKeys.seeMore[g11nLocale]}
+            {t("see-more")}
           </Link>
           <Box className={styles.downloadLinkContainer}>
             <Link
               className={styles.downloadButtonLink}
-              href={productSectionKeys.links.appStore}
+              href={`/${download.appStore}`}
             >
               <Image
                 className={styles.downloadApple}
@@ -34,7 +33,7 @@ function ProductSection({ productSectionKeys }: { productSectionKeys: any }) {
             </Link>
             <Link
               className={styles.downloadButtonLink}
-              href={productSectionKeys.links.googlePlay}
+              href={`/${download.googlePlay}`}
             >
               <Image
                 className={styles.downloadGoogle}

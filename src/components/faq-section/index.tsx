@@ -3,30 +3,18 @@ import React from "react";
 
 import style from "./FAQ.module.css";
 import FAQAccordion from "./components";
-import { useRouter } from "next/router";
-import { getLocale } from "next-g11n";
+import { useTranslation } from "next-i18next";
 
-function FAQSection({
-  faqSectionKeys,
-  data,
-}: {
-  faqSectionKeys: any;
-  data: any;
-}) {
-  const router = useRouter();
-  const g11nLocale = getLocale(router) || "en";
+function FAQSection({ data }: { data: any }) {
+  const { t, i18n } = useTranslation("common");
 
   return (
     <Box id="FAQ" className={style.faqContainer}>
       <Box className={style.headingContainer}>
-        <h2 className={style.mainHeading}>
-          {faqSectionKeys.faqTitle[g11nLocale]}
-        </h2>
-        <div className={style.additionalInfo}>
-          {faqSectionKeys.questions[g11nLocale]}
-        </div>
-        <a className={style.contactLink} href="#">
-          {faqSectionKeys.contactUs[g11nLocale]}
+        <h2 className={style.mainHeading}>{t("faq-title")}</h2>
+        <div className={style.additionalInfo}>{t("questions")}</div>
+        <a className={style.contactLink} href="/contacts">
+          {t("contact")}
         </a>
       </Box>
       <Box className={style.accordionGrid}>

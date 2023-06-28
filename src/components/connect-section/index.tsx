@@ -1,10 +1,8 @@
 import { Box } from "@material-ui/core";
 import React from "react";
 import styles from "./Connect.module.css";
-import { useRouter } from "next/router";
 
-function ConnectSection({ connectSectionKeys }: { connectSectionKeys: any }) {
-  const router = useRouter();
+function ConnectSection() {
   return (
     <Box id="cta" className={styles.container}>
       <Box className={styles.innerContainer}>
@@ -19,7 +17,7 @@ function ConnectSection({ connectSectionKeys }: { connectSectionKeys: any }) {
       <button className={styles.downloadButton}>
         <a
           style={{ color: "white", textDecoration: "none" }}
-          href={connectSectionKeys.calendly}
+          href={"/contacts"}
         >
           {"Зв'язатись"}
         </a>

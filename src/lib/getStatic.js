@@ -24,7 +24,6 @@ export async function getI18nProps(ctx, ns = ["common"]) {
 export function makeStaticProps(ns = {}) {
   return async function getStaticProps(ctx) {
     return {
-        
       props: await getI18nProps(ctx, ns),
     };
   };

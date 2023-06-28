@@ -2,7 +2,6 @@ import Head from "next/head";
 import { Button } from "@material-ui/core";
 import { Box, Typography } from "@mui/material";
 import { InferGetStaticPropsType } from "next";
-import { createStaticTerm } from "next-g11n";
 import Image from "next/image";
 import {
   AiOutlineCalendar,
@@ -13,8 +12,13 @@ import {
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import styles from "./Contact.module.css";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { getStaticPaths } from "@/lib/getStatic";
 
-export default function Privacy() {
+
+export default function Privacy({
+  contacts,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
       <Head>
@@ -24,7 +28,7 @@ export default function Privacy() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.mainContainer}>
-        {/* <Header header={header} download={download} calendly={calendly} />
+        <Header />
         <Box className={styles.bgColor}>
           <Box className={styles.widthHalf}>
             <Box className={styles.flexRow}>
@@ -95,49 +99,26 @@ export default function Privacy() {
             </Button>
           </Box>
         </Box>
-        <Footer footerSectionKeys={footerSectionKeys} /> */}
+        <Footer />
       </main>
     </>
   );
 }
 
-// import fs from "fs";
-// import path from "path";
+import fs from "fs";
+import path from "path";
 
-// export const getStaticProps = async () => {
-//   const filePath = path.join(process.cwd(), "landing.config.json");
-//   const jsonData = fs.readFileSync(filePath, "utf8");
-//   const CONFIG = JSON.parse(jsonData);
+const getStaticProps = async () => {
+  const filePath = path.join(process.cwd(), "landing.config.json");
+  const jsonData = fs.readFileSync(filePath, "utf8");
+  const CONFIG = JSON.parse(jsonData);
 
-//   const product = createStaticTerm<Keys, Locales>("product", dictionary);
-//   const features = createStaticTerm<Keys, Locales>("features", dictionary);
-//   const pricing = createStaticTerm<Keys, Locales>("pricing", dictionary);
-//   const faq = createStaticTerm<Keys, Locales>("FAQ", dictionary);
-//   const download = createStaticTerm<Keys, Locales>("download", dictionary);
+  return {
+    props: {
+      ...(await serverSideTranslations("ua", ["common"])),
+      contacts: CONFIG.contacts,
+    },
+  };
+};
 
-//   const header = [product, features, pricing, faq];
-
-//   // footer section
-
-//   const about = createStaticTerm<Keys, Locales>("about", dictionary);
-//   const contact = createStaticTerm<Keys, Locales>("contact", dictionary);
-//   const terms = createStaticTerm<Keys, Locales>("terms", dictionary);
-//   const privacy = createStaticTerm<Keys, Locales>("privacy", dictionary);
-
-//   const footerSectionKeys = {
-//     about,
-//     contact,
-//     terms,
-//     privacy,
-//   };
-
-//   return {
-//     props: {
-//       header: header,
-//       download: download,
-//       calendly: CONFIG.calendly,
-//       footerSectionKeys: footerSectionKeys,
-//       contacts: CONFIG.contacts,
-//     },
-//   };
-// };
+export { getStaticPaths, getStaticProps };

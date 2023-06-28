@@ -15,7 +15,7 @@ import React from "react";
 import { useRouter } from "next/router";
 import { FiMoreVertical } from "react-icons/fi";
 import { useTranslation } from "next-i18next";
-import { getStaticPaths, makeStaticProps } from "@/lib/getStatic";
+import Link from "../../components/Link";
 
 function Header() {
   const router = useRouter();
@@ -37,30 +37,22 @@ function Header() {
         <Typography className={styles.title}>DIGITALIZE</Typography>
         {matches ? (
           <Box className={styles.buttons}>
-            <Button
-              onClick={() => router.push(`/#Product`)}
-              className={styles.button}
+            <Link href={`/#Product`} skipLocaleHandling={false}>
+              <Button className={styles.button}>{t("product")}</Button>
+            </Link>
+            <Link
+              style={{ display: "flex", alignItems: "center" }}
+              href={`/#Features`}
+              skipLocaleHandling={false}
             >
-              {t("product")}
-            </Button>
-            <Button
-              onClick={() => router.push(`/#Product`)}
-              className={styles.button}
-            >
-              {t("features")}
-            </Button>
-            <Button
-              onClick={() => router.push(`/#Product`)}
-              className={styles.button}
-            >
-              {t("pricing")}
-            </Button>
-            <Button
-              onClick={() => router.push(`/#Product`)}
-              className={styles.button}
-            >
-              {t("FAQ")}
-            </Button>
+              <Button className={styles.button}>{t("features")}</Button>
+            </Link>
+            <Link href={`/#Pricing`} skipLocaleHandling={false}>
+              <Button className={styles.button}>{t("pricing")}</Button>
+            </Link>
+            <Link href={`/#FAQ`} skipLocaleHandling={false}>
+              <Button className={styles.button}>{t("FAQ")}</Button>
+            </Link>
 
             <a href={"/contacts"} className={styles.downloadButton}>
               {t("download")}

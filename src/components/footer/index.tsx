@@ -1,16 +1,13 @@
-import { Box, useMediaQuery } from "@material-ui/core";
+import { Box } from "@material-ui/core";
 import { Typography } from "@mui/material";
 import React from "react";
-import { getLocale } from "next-g11n";
-import { useRouter } from "next/router";
-import Link from "next/link";
+import Link from "../Link";
 
 import styles from "./Footer.module.css";
+import { useTranslation } from "next-i18next";
 
-function Footer({ footerSectionKeys }: { footerSectionKeys: any }) {
-  const router = useRouter();
-  const g11nLocale = getLocale(router) || "en";
-
+function Footer() {
+  const { t, i18n } = useTranslation("common");
   return (
     <Box
       style={{
@@ -22,35 +19,20 @@ function Footer({ footerSectionKeys }: { footerSectionKeys: any }) {
     >
       <Box component={"footer"} className={styles.footerContainer}>
         <Typography className={styles.logo}>DIGITALIZE</Typography>
-        <Box
-          className={
-            g11nLocale === "en"
-              ? styles.textContainerEN
-              : styles.textContainerUA
-          }
-        >
+        <Box className={styles.textContainerUA}>
           <Typography style={{ textAlign: "center" }}>
-            <Link
-              style={{ textDecoration: "none", color: "inherit" }}
-              href="/privacy"
-            >
-              {footerSectionKeys.privacy[g11nLocale]}
+            <Link skipLocaleHandling={false} href="/privacy">
+              {t("privacy")}
             </Link>
           </Typography>
           <Typography style={{ textAlign: "center" }}>
-            <Link
-              style={{ textDecoration: "none", color: "inherit" }}
-              href="/terms"
-            >
-              {footerSectionKeys.terms[g11nLocale]}
+            <Link skipLocaleHandling={false} href="/terms">
+              {t("terms")}
             </Link>
           </Typography>
           <Typography style={{ textAlign: "center" }}>
-            <Link
-              style={{ textDecoration: "none", color: "inherit" }}
-              href="/contacts"
-            >
-              {footerSectionKeys.contact[g11nLocale]}
+            <Link skipLocaleHandling={false} href="/contacts">
+              {t("contacts")}
             </Link>
           </Typography>
         </Box>

@@ -49,6 +49,7 @@
 
 .button {
   text-transform: none !important;
+  height: 100%;
 }
 
 .popover {

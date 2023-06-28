@@ -14,6 +14,7 @@ import { getStaticPaths, makeStaticProps } from "../../lib/getStatic";
 
 export default function Home({
   download,
+  data,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
@@ -32,12 +33,12 @@ export default function Home({
         }}
       >
         <Header />
-        {/*  <ProductSection productSectionKeys={productSectionKeys} />
-        <AboutSection aboutSectionKeys={aboutSectionKeys} />
-        <PricingSection pricingSectionKeys={pricingSectionKeys} />
-        <FAQSection faqSectionKeys={faqSectionKeys} data={data} />
-        <ConnectSection connectSectionKeys={connectSectionKeys} />
-        <Footer footerSectionKeys={footerSectionKeys} /> */}
+        <ProductSection download={download} />
+        <AboutSection />
+        <PricingSection />
+        <FAQSection data={data} />
+        <ConnectSection />
+        <Footer  />
       </main>
     </>
   );
@@ -55,6 +56,7 @@ const getStaticProps = async () => {
     props: {
       ...(await serverSideTranslations("ua", ["common"])),
       download: { googlePlay: CONFIG.googlePlay, appStore: CONFIG.appStore },
+      data: CONFIG.faq,
     },
   };
 };

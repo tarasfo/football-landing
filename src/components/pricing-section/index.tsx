@@ -11,10 +11,10 @@ import style from "./PricingSection.module.css";
 import Image from "next/image";
 import { getLocale } from "next-g11n";
 import { useRouter } from "next/router";
+import { useTranslation } from "next-i18next";
 
-function PricingSection({ pricingSectionKeys }: { pricingSectionKeys: any }) {
-  const router = useRouter();
-  const g11nLocale = getLocale(router) || "en";
+function PricingSection() {
+  const { t, i18n } = useTranslation("common");
 
   return (
     <Box id="Pricing" className={style.pricingSection}>
@@ -30,7 +30,7 @@ function PricingSection({ pricingSectionKeys }: { pricingSectionKeys: any }) {
 
             <Image src="/solidarity.png" width={120} height={120} alt="icon" />
             <Typography className={style.cardPriseDetails} gutterBottom>
-              {pricingSectionKeys.free[g11nLocale]}
+              {t("free")}
             </Typography>
             <Typography className={style.cardSubtitle}>
               для дитячих команд
@@ -50,9 +50,9 @@ function PricingSection({ pricingSectionKeys }: { pricingSectionKeys: any }) {
             <Button className={style.cardBasicButton} size="small">
               <a
                 style={{ textDecoration: "none", color: "white" }}
-                href={pricingSectionKeys.calendly}
+                href={"/contacts"}
               >
-                {pricingSectionKeys.download[g11nLocale]}
+                {t("download")}
               </a>
             </Button>
           </CardActions>
@@ -82,9 +82,9 @@ function PricingSection({ pricingSectionKeys }: { pricingSectionKeys: any }) {
             <Button className={style.cardBasicButton} size="small">
               <a
                 style={{ textDecoration: "none", color: "white" }}
-                href={pricingSectionKeys.calendly}
+                href={"/contacts"}
               >
-                {pricingSectionKeys.download[g11nLocale]}
+                {t("download")}
               </a>
             </Button>
           </CardActions>
@@ -123,9 +123,9 @@ function PricingSection({ pricingSectionKeys }: { pricingSectionKeys: any }) {
             <Button className={style.cardBasicButton} size="small">
               <a
                 style={{ textDecoration: "none", color: "white" }}
-                href={pricingSectionKeys.calendly}
+                href={"/contacts"}
               >
-                {pricingSectionKeys.download[g11nLocale]}
+                {t("download")}
               </a>
             </Button>
           </CardActions>

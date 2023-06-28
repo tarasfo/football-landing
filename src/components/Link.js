@@ -16,8 +16,8 @@ const LinkComponent = ({ children, skipLocaleHandling, ...rest }) => {
 
   return (
     <>
-      <Link href={href}>
-        <a {...rest}>{children}</a>
+      <Link style={{ textDecoration: "none", color: "inherit" }} href={href}>
+        {children}
       </Link>
     </>
   );
