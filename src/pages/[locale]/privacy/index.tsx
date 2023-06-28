@@ -2,6 +2,7 @@ import Head from "next/head";
 import { createStaticTerm } from "next-g11n";
 import { InferGetStaticPropsType } from "next";
 import Header from "@/components/header";
+import { getStaticPaths, makeStaticProps } from "@/lib/getStatic";
 
 export default function Privacy() {
   return (
@@ -657,27 +658,5 @@ export default function Privacy() {
   );
 }
 
-// import fs from "fs";
-// import path from "path";
-
-// export const getStaticProps = async () => {
-//   const filePath = path.join(process.cwd(), "landing.config.json");
-//   const jsonData = fs.readFileSync(filePath, "utf8");
-//   const CONFIG = JSON.parse(jsonData);
-
-//   const product = createStaticTerm<Keys, Locales>("product", dictionary);
-//   const features = createStaticTerm<Keys, Locales>("features", dictionary);
-//   const pricing = createStaticTerm<Keys, Locales>("pricing", dictionary);
-//   const faq = createStaticTerm<Keys, Locales>("FAQ", dictionary);
-//   const download = createStaticTerm<Keys, Locales>("download", dictionary);
-
-//   const header = [product, features, pricing, faq];
-
-//   return {
-//     props: {
-//       header: header,
-//       download: download,
-//       calendly: CONFIG.calendly,
-//     },
-//   };
-// };
+ const getStaticProps = makeStaticProps(['common'])
+ export { getStaticPaths, getStaticProps }
