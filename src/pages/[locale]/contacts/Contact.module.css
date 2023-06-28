@@ -103,7 +103,7 @@
 
 @media (max-width: 768px) {
   .bgColor {
-    flex-direction: column;
+    flex-direction: column-reverse;
     height: auto;
     padding: 50px 5%;
   }

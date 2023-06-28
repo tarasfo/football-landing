@@ -19,6 +19,7 @@ export default function Terms() {
           flexDirection: "column",
         }}
       >
+        <Header />
         <h2>
           <b>TERMS AND CONDITIONS</b>
         </h2>

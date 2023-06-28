@@ -20,6 +20,7 @@ export default function Privacy() {
           flexDirection: "column",
         }}
       >
+        <Header />
         <h2>
           <b>PRIVACY POLICY</b>
         </h2>

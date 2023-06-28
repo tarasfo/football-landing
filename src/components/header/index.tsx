@@ -53,10 +53,9 @@ function Header() {
             <Link href={`/#FAQ`} skipLocaleHandling={false}>
               <Button className={styles.button}>{t("FAQ")}</Button>
             </Link>
-
-            <a href={"/contacts"} className={styles.downloadButton}>
-              {t("download")}
-            </a>
+            <Link skipLocaleHandling={false} href={"/contacts"}>
+              <div className={styles.downloadButton}>{t("download")}</div>
+            </Link>
           </Box>
         ) : (
           <div>
@@ -77,17 +76,49 @@ function Header() {
                 paper: styles.popover,
               }}
             >
-              {/* {header.map((item: any) => (
+              <Link href={`/#Product`} skipLocaleHandling={false}>
                 <MenuItem
                   onClick={() => {
-                    router.push(`/#${item["en"]}`), handleClose();
-                  }} // take id of section from dictionary
+                    handleClose();
+                  }}
                   className={styles.button}
-                  key={item[g11nLocale]}
                 >
-                  {item[g11nLocale]}
+                  {t("product")}
                 </MenuItem>
-              ))} */}
+              </Link>
+
+              <Link href={`/#Features`} skipLocaleHandling={false}>
+                <MenuItem
+                  onClick={() => {
+                    handleClose();
+                  }}
+                  className={styles.button}
+                >
+                  {t("features")}
+                </MenuItem>
+              </Link>
+
+              <Link href={`/#Pricing`} skipLocaleHandling={false}>
+                <MenuItem
+                  onClick={() => {
+                    handleClose();
+                  }}
+                  className={styles.button}
+                >
+                  {t("pricing")}
+                </MenuItem>
+              </Link>
+
+              <Link href={`/#FAQ`} skipLocaleHandling={false}>
+                <MenuItem
+                  onClick={() => {
+                    handleClose();
+                  }}
+                  className={styles.button}
+                >
+                  {t("FAQ")}
+                </MenuItem>
+              </Link>
               <MenuItem>
                 <a
                   style={{
