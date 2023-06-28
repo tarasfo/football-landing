@@ -5,6 +5,7 @@ import languageDetector from "./languageDetector";
 export const useRedirect = (to) => {
   const router = useRouter();
   to = to || router.asPath;
+  console.log("Redirecting to", to);
 
   // language detection
   useEffect(() => {

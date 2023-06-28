@@ -12,6 +12,7 @@ import { AppType } from "next/app";
 import { MyAppProps } from "./_app";
 import theme from "@/theme";
 import createEmotionCache from "@/createEmotionCache";
+import i18nextConfig from '../../next-i18next.config'
 
 interface MyDocumentProps extends DocumentProps {
   emotionStyleTags: JSX.Element[];
@@ -19,7 +20,7 @@ interface MyDocumentProps extends DocumentProps {
 
 export default function MyDocument({ emotionStyleTags }: MyDocumentProps) {
   return (
-    <Html>
+    <Html lang={i18nextConfig.i18n.defaultLocale}>
       <Head>
         {/* PWA primary color */}
         <meta name="theme-color" content={theme.palette.primary.main} />
