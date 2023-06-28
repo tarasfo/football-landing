@@ -32,7 +32,7 @@ function Footer() {
           </Typography>
           <Typography style={{ textAlign: "center" }}>
             <Link skipLocaleHandling={false} href="/contacts">
-              {t("contacts")}
+              {t("contact")}
             </Link>
           </Typography>
         </Box>
