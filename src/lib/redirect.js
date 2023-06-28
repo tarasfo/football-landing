@@ -12,7 +12,7 @@ export const useRedirect = (to) => {
     const detectedLng = "ua";
     if (to.startsWith("/" + detectedLng) && router.route === "/404") {
       // prevent endless loop
-      router.replace("/" + detectedLng + router.route);
+      router.replace("/" + detectedLng);
       return;
     }
 
